@@ -30,8 +30,9 @@ test("server-renders the vsetak.studio landing page", async () => {
   const html = await response.text();
   assert.match(html, /<html[^>]*lang="ru"/i);
   assert.match(html, /<title>Всё так — студия цифровых продуктов<\/title>/i);
-  assert.match(html, /Привет, я Марк Калинин\./);
-  assert.match(html, /Данные, автоматизация и ИИ/);
+  assert.match(html, /Привет, я(?:\u00a0|&nbsp;)Марк Калинин/);
+  assert.doesNotMatch(html, /Марк Калинин\./);
+  assert.match(html, /Данные, автоматизация и(?:\u00a0|&nbsp;)ИИ/);
   assert.match(html, /mailto:hello@vsetak\.studio/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Starter Project/i);
 });
