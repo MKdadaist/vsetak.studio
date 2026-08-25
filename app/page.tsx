@@ -1,4 +1,5 @@
-const intro = "Привет, я\u00A0Марк Калинин";
+const introLines = ["Привет,", "я\u00A0Марк Калинин"];
+const intro = introLines.join(" ");
 
 const services = [
   "Айдентика и\u00A0брендбуки",
@@ -22,16 +23,34 @@ export default function Home() {
         <h1 className="intro" id="intro-heading" aria-label={intro}>
           <span className="sr-only">{intro}</span>
           <span className="typewriter" aria-hidden="true">
-            {Array.from(intro).map((character, index) => (
-              <span
-                className="typewriter-character"
-                style={{ "--character-index": index } as React.CSSProperties}
-                key={`${character}-${index}`}
-              >
-                {character === " " ? "\u00A0" : character}
-              </span>
-            ))}
-            <span className="typewriter-caret" />
+            {introLines.map((line, lineIndex) => {
+              const characterOffset = introLines
+                .slice(0, lineIndex)
+                .reduce((total, current) => total + current.length + 1, 0);
+
+              return (
+                <span className="typewriter-line" key={line}>
+                  {Array.from(line).map((character, characterIndex) => {
+                    const index = characterOffset + characterIndex;
+
+                    return (
+                      <span
+                        className="typewriter-character"
+                        style={
+                          { "--character-index": index } as React.CSSProperties
+                        }
+                        key={`${character}-${index}`}
+                      >
+                        {character === " " ? "\u00A0" : character}
+                      </span>
+                    );
+                  })}
+                  {lineIndex === introLines.length - 1 && (
+                    <span className="typewriter-caret" />
+                  )}
+                </span>
+              );
+            })}
           </span>
         </h1>
 
