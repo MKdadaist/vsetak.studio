@@ -87,7 +87,9 @@ export default function Home() {
 
       <footer className="site-footer">
         <p className="footer-statement">
-          {"Дизайн, технологии и\u00A0здравый смысл."}
+          Дизайн, технологии
+          <br />
+          {"и\u00A0здравый смысл."}
           <br />
           Чтобы всё было так.
         </p>
