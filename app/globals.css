@@ -6,8 +6,7 @@
   --muted: #68665f;
   --line: rgba(24, 24, 21, 0.2);
   --accent: #a6422c;
-  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino,
-    "Times New Roman", serif;
+  --serif: var(--font-source-serif), "Times New Roman", serif;
   --sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
