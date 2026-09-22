@@ -1015,18 +1015,18 @@
       ]
     }
   ],
-  "rko-design": [
+  "rko": [
     {
       "layout": "single",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/rko-design/mockup-home-34e0a0d8-16x9-50-50.webp",
+          "src": "/media/rko/mockup-home-34e0a0d8-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/mockup-home-34e0a0d8.webp"
+          "original": "/media/rko/src/mockup-home-34e0a0d8.webp"
         }
       ]
     },
@@ -1035,30 +1035,30 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-expert-af97bffa-16x9-50-50.webp",
+          "src": "/media/rko/ph-expert-af97bffa-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-expert-af97bffa.webp"
+          "original": "/media/rko/src/ph-expert-af97bffa.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-timeline-ae23bb6d-4x3-50-50.webp",
+          "src": "/media/rko/ph-timeline-ae23bb6d-4x3-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-timeline-ae23bb6d.webp"
+          "original": "/media/rko/src/ph-timeline-ae23bb6d.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-history-2f2e88f3-4x3-50-50.webp",
+          "src": "/media/rko/ph-history-2f2e88f3-4x3-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-history-2f2e88f3.webp"
+          "original": "/media/rko/src/ph-history-2f2e88f3.webp"
         }
       ]
     },
@@ -1067,39 +1067,39 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-builder-1c042c29-16x9-50-50.webp",
+          "src": "/media/rko/ph-builder-1c042c29-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-builder-1c042c29.webp"
+          "original": "/media/rko/src/ph-builder-1c042c29.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-publications-46909e61-3x4-50-50.webp",
+          "src": "/media/rko/ph-publications-46909e61-3x4-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-publications-46909e61.webp"
+          "original": "/media/rko/src/ph-publications-46909e61.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-events-a0179c3f-3x4-50-50.webp",
+          "src": "/media/rko/ph-events-a0179c3f-3x4-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-events-a0179c3f.webp"
+          "original": "/media/rko/src/ph-events-a0179c3f.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko-design/ph-search-f39016c1-4x3-50-50.webp",
+          "src": "/media/rko/ph-search-f39016c1-4x3-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko-design/src/ph-search-f39016c1.webp"
+          "original": "/media/rko/src/ph-search-f39016c1.webp"
         }
       ]
     }
