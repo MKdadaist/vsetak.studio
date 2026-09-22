@@ -133,5 +133,281 @@
         null
       ]
     }
+  ],
+  "spectres": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7131-0c835d4a-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7131-0c835d4a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7122-47c2316a-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7122-47c2316a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7126-ef711c33-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7126-ef711c33.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-portraits",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/timeline-front-6a9844ce-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/timeline-front-6a9844ce.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_3942-2fca5008-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_3942-2fca5008.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/pack-front-aa1d8166-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/pack-front-aa1d8166.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/ghosts-mockup-e3f52c69-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/ghosts-mockup-e3f52c69.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7109-85ce73a9-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7109-85ce73a9.webp"
+        }
+      ]
+    }
+  ],
+  "hlebozavod": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-043-54f4849b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-043-54f4849b.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-041-5452e8db-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-041-5452e8db.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-042-c4c145b7-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-042-c4c145b7.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз4-ffc870da-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз4-ffc870da.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз3-459e2889-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз3-459e2889.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хзклин-9576520e-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хзклин-9576520e.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз1-7211b772-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз1-7211b772.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз-супрема-78c1f733-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз-супрема-78c1f733.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-044-e1b1aa6e-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-044-e1b1aa6e.webp"
+        }
+      ]
+    }
+  ],
+  "arsenal": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_river-cba07bdd-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_river-cba07bdd.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_explotionscheme-4385ff3a-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_explotionscheme-4385ff3a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_museum1-0492e203-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_museum1-0492e203.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_plan1-c1ac713f-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_plan1-c1ac713f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_academy-521623a2-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_academy-521623a2.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_flovershop-07f07688-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_flovershop-07f07688.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/arsenal-museum-00-1f6e8d91-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/arsenal-museum-00-1f6e8d91.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_newconstr-0dd3e1e0-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_newconstr-0dd3e1e0.webp"
+        }
+      ]
+    }
   ]
 }
