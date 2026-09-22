@@ -174,6 +174,7 @@ export const directions: Direction[] = [
       },
       {
         slug: "lune",
+        hidden: true,
         title: "Lune",
         client: "Дизайн-агентство",
         year: "2025",
