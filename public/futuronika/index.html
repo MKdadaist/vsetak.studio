@@ -91,12 +91,12 @@
       position: fixed;
       z-index: 2;
       font-family: 'IBM Plex Mono', 'Courier New', monospace;
-      line-height: 1.5;
-      letter-spacing: 0.03em;
+      line-height: 1.75;
+      letter-spacing: 0.12em;
       pointer-events: none;
       white-space: pre;
       opacity: 0;
-      transition: opacity 0.65s ease;
+      transition: opacity 1.4s ease;
       user-select: none;
     }
     .ascii-ghost.show { opacity: 1; }
@@ -283,7 +283,10 @@
       font-size: 11px; letter-spacing: 0.18em;
       text-transform: uppercase; color: #b7b7b7;
       padding: 4px 0;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
+    .d-expand-title:hover { color: #fff; }
     .d-expand-desc {
       font-size: 9px; letter-spacing: 0.12em;
       color: #686868; line-height: 2.2;
@@ -407,7 +410,7 @@
     norm = e.clientX / window.innerWidth;
     cursorPos.style.transform = `translate(${mx}px, ${my}px)`;
     hist.push({ x: mx, y: my, t: performance.now() });
-    if (!moved) { moved = true; setTimeout(() => hint.classList.add('gone'), 500); }
+    if (!moved) { moved = true; setTimeout(() => hint?.classList.add('gone'), 500); }
     const zone = norm < ZONES[0] ? 0 : norm < ZONES[1] ? 1 : 2;
     srvEls.forEach((el, i) => el.classList.toggle('active', i === zone));
   });
@@ -670,15 +673,16 @@
   const rnd   = () => CHARS[Math.floor(Math.random() * CHARS.length)];
 
   /* ── 3 size tiers cycling ── */
+  /* Размер знаков ограничен сверху, чтобы рисунки не перекрывали главную */
   const SZ_CYCLE = [
-    { fs:  9, op: 0.45 },
-    { fs: 15, op: 0.20 },
-    { fs: 24, op: 0.10 },
+    { fs:  9, op: 0.40 },
+    { fs: 12, op: 0.26 },
+    { fs: 15, op: 0.16 },
   ];
   let szIdx = 0;
 
   /* Max visible density — never show 100% of cells */
-  const MAX_DENSITY = 0.62;
+  const MAX_DENSITY = 0.4;
   /* Track last used to prevent repeats */
   let lastAnimalName = null;
 
@@ -689,7 +693,7 @@
   }
 
   /* ── Pool: max 3 simultaneous ── */
-  const MAX_POOL = 3;
+  const MAX_POOL = 2;
   const pool = [];
 
   function startDissolve(inst) {
@@ -714,9 +718,9 @@
         el.classList.remove('show');
         const pi = pool.indexOf(inst);
         if (pi !== -1) pool.splice(pi, 1);
-        setTimeout(() => el.remove(), 700);
+        setTimeout(() => el.remove(), 1400);
       }
-    }, 48);
+    }, 90);
   }
 
   function spawnAnimal() {
@@ -732,7 +736,7 @@
     const sz = SZ_CYCLE[szIdx++ % SZ_CYCLE.length];
     const { fs, op } = sz;
 
-    const lineH = fs * 1.5, charW = fs * 0.605;
+    const lineH = fs * 1.75, charW = fs * 0.725;
     const artH  = animal.lines.length * lineH;
     const artW  = Math.max(...animal.lines.map(l => l.length)) * charW;
     const pos   = findPos(artW, artH);
@@ -786,7 +790,7 @@
       pending.forEach(i => { activeCells[i].textContent = rnd(); });
       /* Lock a batch each tick */
       const arr = [...pending];
-      const n   = Math.max(1, Math.floor(arr.length * 0.07));
+      const n   = Math.max(1, Math.floor(arr.length * 0.04));
       for (let k = 0; k < n; k++) {
         if (!arr.length) break;
         const idx = arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
@@ -796,14 +800,15 @@
       if (!pending.size) {
         clearInterval(inst._rid); inst._rid = null;
         inst.state = 'holding';
-        startDissolve(inst);
+        /* немного подержать рисунок перед растворением */
+        setTimeout(() => startDissolve(inst), 1600);
       }
-    }, 50);
+    }, 95);
   }
 
-  /* Spawn every 2–3.5s (paused when detail is open) */
+  /* Spawn every 5–8s (paused when detail is open) */
   function scheduleNext() {
-    setTimeout(() => { if (!detailOpen) spawnAnimal(); scheduleNext(); }, 2000 + Math.random() * 1500);
+    setTimeout(() => { if (!detailOpen) spawnAnimal(); scheduleNext(); }, 5000 + Math.random() * 3000);
   }
   setTimeout(() => { spawnAnimal(); scheduleNext(); }, 800);
 
@@ -971,14 +976,26 @@
       /* 3 — body text types */
       asciiScrambleEl(dBody, data.body, () => {
 
-        /* 4 — descriptions expand one by one */
-        descEls.forEach(({ titleEl, descEl, desc }, i) => {
-          setTimeout(() => {
-            titleEl.style.color = '#fff';
-            descEl.classList.add('open');
-            asciiScrambleEl(descEl, desc);
-          }, i * 280);
+        /* 4 — аккордеон: открыт только один пункт, остальные закрываются сами */
+        const openItem = (k) => {
+          descEls.forEach(({ titleEl, descEl, desc }, i) => {
+            const isOpen = i === k;
+            titleEl.style.color = isOpen ? '#fff' : '';
+            if (isOpen && !descEl.classList.contains('open')) {
+              descEl.classList.add('open');
+              asciiScrambleEl(descEl, desc);
+            } else if (!isOpen) {
+              descEl.classList.remove('open');
+            }
+          });
+        };
+        descEls.forEach(({ titleEl }, i) => {
+          titleEl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openItem(i);
+          });
         });
+        openItem(0);
       });
     });
   }
