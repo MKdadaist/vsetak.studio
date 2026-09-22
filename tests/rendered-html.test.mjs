@@ -32,7 +32,7 @@ test("server-renders the vsetak.studio landing page", async () => {
   assert.match(html, /<title>Всё так — контент, дизайн, концепции<\/title>/i);
   assert.match(html, /Привет, я(?:\u00a0|&nbsp;)Марк Калинин/);
   assert.doesNotMatch(html, /Марк Калинин\./);
-  assert.match(html, /Данные, автоматизация и(?:\u00a0|&nbsp;)ИИ/);
+  assert.match(html, /Презентации/);
   assert.match(html, /моя моностудия контента/);
   assert.doesNotMatch(html, /Создаём|Проектируем|Работаем|Собираем/);
   assert.match(html, /mailto:hello@vsetak\.studio/);
