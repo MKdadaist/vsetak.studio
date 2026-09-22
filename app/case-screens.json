@@ -409,5 +409,285 @@
         }
       ]
     }
+  ],
+  "s7": [
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/s7/a1-1dd13b9b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/a1-1dd13b9b.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/a2-dfcbc1b3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/a2-dfcbc1b3.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/a3-86b9a18b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/a3-86b9a18b.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-4",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/s7/b1-e92f0896-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/b1-e92f0896.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/b2-c97dd166-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/b2-c97dd166.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/b3-143b0509-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/b3-143b0509.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/b4-98ee9808-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/b4-98ee9808.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/s7/c1-a845cafd-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/c1-a845cafd.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/c2-dac72132-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/c2-dac72132.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/s7/c3-ae1e43e6-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/s7/src/c3-ae1e43e6.webp"
+        }
+      ]
+    }
+  ],
+  "az-education": [
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/az-education/a1w-727999e8-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/a1w-727999e8.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/a2w-9fc417ab-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/a2w-9fc417ab.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/a3w-b4363890-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/a3w-b4363890.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/az-education/b1-b322f3f1-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/b1-b322f3f1.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/b2-deeb86ef-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/b2-deeb86ef.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/b3-0513c6e3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/b3-0513c6e3.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/az-education/c1-8bfd056d-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/c1-8bfd056d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/c2-59bcb18c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/c2-59bcb18c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/az-education/c3-47aba0ea-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/az-education/src/c3-47aba0ea.webp"
+        }
+      ]
+    }
+  ],
+  "dym": [
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/dym/p1-5f13122c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p1-5f13122c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/dym/p4-07694d48-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p4-07694d48.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/dym/p8-cc4f53ef-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p8-cc4f53ef.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-4",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/dym/p5-16e7b7e8-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p5-16e7b7e8.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/dym/p6-23529c49-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p6-23529c49.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/dym/p7-a16a55e5-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p7-a16a55e5.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/dym/p10-0092f6a2-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/dym/src/p10-0092f6a2.webp"
+        }
+      ]
+    }
   ]
 }
