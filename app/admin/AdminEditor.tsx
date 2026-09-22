@@ -146,6 +146,37 @@ export function AdminEditor() {
     }
   };
 
+  // Поворот на 90° по часовой: считается от исходника, кадр поворачивается вместе с фото.
+  const rotateSlot = async (ref: SlotRef) => {
+    const slot = screens[ref.screen].slots[ref.slot];
+    if (!slot || slot.kind !== "image") return;
+    const source = slot.original ?? slot.src;
+    const rotate = ((slot.rotate ?? 0) + 90) % 360;
+    const key = refKey(ref);
+    setBusy((b) => ({ ...b, [key]: true }));
+    try {
+      const res = await fetch("/__admin/rotate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug, source, rotate }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Не удалось повернуть");
+      const [fx, fy] = slot.focus ?? [50, 50];
+      setSlot(ref, {
+        ...slot,
+        original: source,
+        rotate: rotate ? (rotate as 90 | 180 | 270) : undefined,
+        rotated: data.rotated ?? undefined,
+        focus: [100 - fy, fx],
+      });
+    } catch (error) {
+      setStatus((error as Error).message);
+    } finally {
+      setBusy((b) => ({ ...b, [key]: false }));
+    }
+  };
+
   // Перетаскивание фото между ячейками: пока фото над ячейкой, её фото
   // уже стоит на освободившемся месте; отпустили — обмен закреплён.
   const [drag, setDrag] = useState<DragState | null>(null);
@@ -321,6 +352,7 @@ export function AdminEditor() {
             onSlot={(slot, value) => setSlot({ screen: s, slot }, value)}
             onFiles={(slot, files) => dropFiles({ screen: s, slot }, files)}
             onStartDrag={(slot, value, x, y) => startDrag({ screen: s, slot }, value, x, y)}
+            onRotate={(slot) => rotateSlot({ screen: s, slot })}
           />
         ))}
 
@@ -338,7 +370,7 @@ export function AdminEditor() {
       {drag && (
         <div className="admin-ghost" style={{ left: drag.x, top: drag.y }} aria-hidden="true">
           {drag.slot.kind === "image" ? (
-            <img src={drag.slot.original ?? drag.slot.src} alt="" />
+            <img src={drag.slot.rotated ?? drag.slot.original ?? drag.slot.src} alt="" />
           ) : (
             <span>{drag.slot.kind}</span>
           )}
@@ -360,6 +392,7 @@ function ScreenEditor({
   onSlot,
   onFiles,
   onStartDrag,
+  onRotate,
 }: {
   index: number;
   total: number;
@@ -372,6 +405,7 @@ function ScreenEditor({
   onSlot: (slot: number, value: Slot | null) => void;
   onFiles: (slot: number, files: File[]) => void;
   onStartDrag: (slot: number, value: Slot, x: number, y: number) => void;
+  onRotate: (slot: number) => void;
 }) {
   const layout = screenLayout(screen);
   const from = drag ? refKey(drag.from) : null;
@@ -444,6 +478,7 @@ function ScreenEditor({
               onChange={(value) => onSlot(i, value)}
               onFiles={(files) => onFiles(i, files)}
               onStartDrag={(value, x, y) => onStartDrag(i, value, x, y)}
+              onRotate={() => onRotate(i)}
             />
           );
         }}
@@ -464,6 +499,7 @@ function SlotEditor({
   onChange,
   onFiles,
   onStartDrag,
+  onRotate,
 }: {
   slot: Slot | null;
   ratio: [number, number];
@@ -473,6 +509,7 @@ function SlotEditor({
   onChange: (slot: Slot | null) => void;
   onFiles: (files: File[]) => void;
   onStartDrag: (slot: Slot, x: number, y: number) => void;
+  onRotate: () => void;
 }) {
   const [over, setOver] = useState(false);
   const [framing, setFraming] = useState(false);
@@ -553,7 +590,8 @@ function SlotEditor({
     if (url?.trim()) onChange(slotFromUrl(url.trim()));
   };
 
-  const preview = slot?.kind === "image" ? (slot.original ?? slot.src) : slot?.src;
+  const preview =
+    slot?.kind === "image" ? (slot.rotated ?? slot.original ?? slot.src) : slot?.src;
   const classes = [
     "admin-slot",
     over && "is-over",
@@ -623,6 +661,11 @@ function SlotEditor({
               title={framing ? "Готово" : "Кадр: двигать картинку внутри ячейки"}
             >
               {framing ? "✓" : "✥"}
+            </button>
+          )}
+          {slot.kind === "image" && (
+            <button type="button" onClick={onRotate} disabled={busy} title="Повернуть на 90° по часовой">
+              ↻
             </button>
           )}
           <button type="button" onClick={() => input.current?.click()} title="Заменить">

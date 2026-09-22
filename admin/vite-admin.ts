@@ -1,7 +1,7 @@
 // Локальная админка кейсов: API для загрузки картинок и сохранения экранов.
 // Работает только в dev-сервере (apply: "serve"), в сборку не попадает.
 import { createHash } from "node:crypto";
-import { existsSync } from "node:fs";
+import { createReadStream, existsSync, statSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import path from "node:path";
@@ -17,6 +17,8 @@ type Slot = {
   src: string;
   original?: string;
   focus?: [number, number];
+  rotate?: number;
+  rotated?: string;
   alt?: string;
   title?: string;
 };
@@ -109,19 +111,57 @@ export function adminPlugin(): Plugin {
     return { original: rel, width: info.width, height: info.height };
   }
 
+  function normalizeRotation(deg: unknown): 0 | 90 | 180 | 270 {
+    const n = ((Math.round(Number(deg) / 90) % 4) + 4) % 4;
+    return (n * 90) as 0 | 90 | 180 | 270;
+  }
+
+  // Исходник, повёрнутый на deg по часовой: всегда от оригинала, без потерь на повторных поворотах.
+  async function rotatedBuffer(source: string, deg: number) {
+    const input = await readFile(publicPath(source));
+    const upright = await sharp(input, { failOn: "none" }).rotate().toBuffer();
+    return deg ? sharp(upright).rotate(deg).toBuffer() : upright;
+  }
+
+  async function rotatedPreview(req: IncomingMessage) {
+    const body = JSON.parse((await readBody(req)).toString("utf8"));
+    const slug = safeSlug(body.slug);
+    const source = String(body.source ?? "");
+    if (!source.startsWith("/media/")) throw new Error("Можно повернуть только загруженную картинку");
+    const deg = normalizeRotation(body.rotate);
+    if (!deg) return { rotated: null };
+    const rel = `/media/${slug}/src/${baseName(source)}-rot${deg}.webp`;
+    const out = publicPath(rel);
+    if (!existsSync(out)) {
+      await mkdir(path.dirname(out), { recursive: true });
+      await sharp(await rotatedBuffer(source, deg))
+        .webp({ quality: 88, alphaQuality: 100 })
+        .toFile(out);
+    }
+    return { rotated: rel };
+  }
+
   // Режет исходник под пропорции слота вокруг точки фокуса и сохраняет WebP.
-  async function crop(slug: string, source: string, ratio: Ratio, focus?: [number, number]) {
+  async function crop(
+    slug: string,
+    source: string,
+    ratio: Ratio,
+    focus?: [number, number],
+    rotate = 0,
+  ) {
     const [fx, fy] = focus ?? [50, 50];
+    const deg = normalizeRotation(rotate);
+    const turn = deg ? `-r${deg}` : "";
     const key = `${ratio[0]}x${ratio[1]}-${Math.round(fx)}-${Math.round(fy)}`;
-    const rel = `/media/${slug}/${baseName(source)}-${key}.webp`;
+    const rel = `/media/${slug}/${baseName(source)}${turn}-${key}.webp`;
     const out = publicPath(rel);
     if (existsSync(out)) return rel;
 
-    const image = sharp(await readFile(publicPath(source)), { failOn: "none" }).rotate();
+    const buffer = await rotatedBuffer(source, deg);
+    const image = sharp(buffer, { failOn: "none" });
     const meta = await image.metadata();
-    const oriented = (meta.orientation ?? 1) >= 5;
-    const W = (oriented ? meta.height : meta.width) ?? 0;
-    const H = (oriented ? meta.width : meta.height) ?? 0;
+    const W = meta.width ?? 0;
+    const H = meta.height ?? 0;
     if (!W || !H) throw new Error(`Не удалось прочитать ${source}`);
 
     const target = ratio[0] / ratio[1];
@@ -185,7 +225,7 @@ export function adminPlugin(): Plugin {
           slots.push(slot);
           continue;
         }
-        const src = await crop(slug, source, layout.slots[i].ratio, slot.focus);
+        const src = await crop(slug, source, layout.slots[i].ratio, slot.focus, slot.rotate);
         slots.push({ ...slot, src, original: source });
       }
       processed.push({ layout: screen.layout, slots });
@@ -208,12 +248,39 @@ export function adminPlugin(): Plugin {
       root = config.root;
     },
     configureServer(server) {
+      // Только что созданные нарезки Vite замечает с задержкой и какое-то время
+      // отвечает 404 — отдаём файлы из public/media прямо с диска.
+      server.middlewares.use((req, res, next) => {
+        if (req.method !== "GET" || !req.url?.startsWith("/media/")) return next();
+        try {
+          const file = publicPath(req.url);
+          if (!existsSync(file) || !statSync(file).isFile()) return next();
+          const ext = path.extname(file).toLowerCase();
+          const types: Record<string, string> = {
+            ".webp": "image/webp",
+            ".jpg": "image/jpeg",
+            ".jpeg": "image/jpeg",
+            ".png": "image/png",
+            ".mp4": "video/mp4",
+          };
+          if (!types[ext]) return next();
+          res.setHeader("Content-Type", types[ext]);
+          res.setHeader("Cache-Control", "no-cache");
+          createReadStream(file).pipe(res);
+        } catch {
+          next();
+        }
+      });
+
       server.middlewares.use(async (req, res, next) => {
         if (!req.url?.startsWith("/__admin/")) return next();
         const url = new URL(req.url, "http://localhost");
         try {
           if (req.method === "POST" && url.pathname === "/__admin/upload") {
             return send(res, 200, await upload(req, url));
+          }
+          if (req.method === "POST" && url.pathname === "/__admin/rotate") {
+            return send(res, 200, await rotatedPreview(req));
           }
           if (req.method === "POST" && url.pathname === "/__admin/save") {
             return send(res, 200, await save(req));
