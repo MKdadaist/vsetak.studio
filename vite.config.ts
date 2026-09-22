@@ -1,5 +1,6 @@
 import { sites } from "@openai/sites-vite-plugin";
 import vinext from "vinext";
+import { adminPlugin } from "./admin/vite-admin";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 
@@ -48,6 +49,7 @@ export default defineConfig(async () => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
+      adminPlugin(),
       vinext(),
       sites(),
       cloudflare({

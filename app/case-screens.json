@@ -1,0 +1,91 @@
+{
+  "vne-establishmenta": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00008-60fcd97a-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00008-60fcd97a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00288-f23c43c7-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00288-f23c43c7.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00576-7e884b6b-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00576-7e884b6b.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00310-8c544f74-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00310-8c544f74.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00321-71ca3164-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00321-71ca3164.webp"
+        }
+      ]
+    },
+    {
+      "layout": "trio",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00002-4dc5eca5-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00002-4dc5eca5.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00301-be863632-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00301-be863632.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00005-a5b6b174-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00005-a5b6b174.webp"
+        }
+      ]
+    }
+  ]
+}
