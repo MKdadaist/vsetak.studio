@@ -204,12 +204,12 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/spectres/ghosts-mockup-e3f52c69-4x3-50-50.webp",
+          "src": "/media/spectres/ghosts-mockup-small-7cd78f70-4x3-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/spectres/src/ghosts-mockup-e3f52c69.webp"
+          "original": "/media/spectres/src/ghosts-mockup-small-7cd78f70.webp"
         },
         {
           "kind": "image",

@@ -25,7 +25,7 @@ type Slot = {
 type Screen = { layout: string; slots: (Slot | null)[]; ratio?: Ratio };
 type Layout = { id: string; slots: { area: string; ratio: Ratio }[] };
 
-const MAX_BODY = 60 * 1024 * 1024;
+const MAX_BODY = 250 * 1024 * 1024;
 const ORIGINAL_MAX = 2800;
 const CROP_MAX = 2000;
 
@@ -36,7 +36,7 @@ function readBody(req: IncomingMessage): Promise<Buffer> {
     req.on("data", (chunk: Buffer) => {
       size += chunk.length;
       if (size > MAX_BODY) {
-        reject(new Error("Файл больше 60 МБ"));
+        reject(new Error("Файл больше 250 МБ"));
         req.destroy();
         return;
       }
