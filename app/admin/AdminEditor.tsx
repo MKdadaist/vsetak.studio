@@ -11,7 +11,7 @@ import {
 import {
   caseScreens,
   directions,
-  findCase,
+  findAnyCase,
   firstImage,
   type CaseItem,
 } from "../cases";
@@ -24,10 +24,34 @@ import {
   type Slot,
 } from "../screens";
 
-const SLOT_MIME = "application/x-vsetak-slot";
 const isDev = process.env.NODE_ENV !== "production";
 
 type SlotRef = { screen: number; slot: number };
+
+type DragState = {
+  from: SlotRef;
+  slot: Slot;
+  x: number;
+  y: number;
+  over: SlotRef | null;
+};
+
+const refKey = (ref: SlotRef) => `${ref.screen}:${ref.slot}`;
+
+function slotAt(x: number, y: number): SlotRef | null {
+  const el = document.elementFromPoint(x, y)?.closest<HTMLElement>("[data-slot]");
+  if (!el?.dataset.slot) return null;
+  const [screen, slot] = el.dataset.slot.split(":").map(Number);
+  return { screen, slot };
+}
+
+function swapped(screens: Screen[], a: SlotRef, b: SlotRef): Screen[] {
+  const next = structuredClone(screens);
+  const first = next[a.screen].slots[a.slot] ?? null;
+  next[a.screen].slots[a.slot] = next[b.screen].slots[b.slot] ?? null;
+  next[b.screen].slots[b.slot] = first;
+  return next;
+}
 
 function initialScreens(item: CaseItem): Screen[] {
   return structuredClone(savedScreensFor(item.slug) ?? caseScreens(item));
@@ -51,7 +75,7 @@ async function uploadFile(slug: string, file: File) {
 
 export function AdminEditor() {
   const [slug, setSlug] = useState(directions[0].cases[0].slug);
-  const item = findCase(slug)!;
+  const item = findAnyCase(slug)!;
   const [screens, setScreens] = useState<Screen[]>(() => initialScreens(item));
   const [dirty, setDirty] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
@@ -77,7 +101,7 @@ export function AdminEditor() {
       return;
     }
     setSlug(next);
-    setScreens(initialScreens(findCase(next)!));
+    setScreens(initialScreens(findAnyCase(next)!));
     setDirty(false);
     setStatus(null);
   };
@@ -122,14 +146,56 @@ export function AdminEditor() {
     }
   };
 
-  const swap = (from: SlotRef, to: SlotRef) =>
-    update((all) => {
-      const a = all[from.screen].slots[from.slot] ?? null;
-      const b = all[to.screen].slots[to.slot] ?? null;
-      all[from.screen].slots[from.slot] = b;
-      all[to.screen].slots[to.slot] = a;
-      return all;
-    });
+  // Перетаскивание фото между ячейками: пока фото над ячейкой, её фото
+  // уже стоит на освободившемся месте; отпустили — обмен закреплён.
+  const [drag, setDrag] = useState<DragState | null>(null);
+  const dragRef = useRef<DragState | null>(null);
+  useEffect(() => {
+    dragRef.current = drag;
+  }, [drag]);
+
+  const startDrag = useCallback((from: SlotRef, slot: Slot, x: number, y: number) => {
+    setDrag({ from, slot, x, y, over: null });
+  }, []);
+
+  const dragging = drag !== null;
+  useEffect(() => {
+    if (!dragging) return;
+    document.body.classList.add("admin-dragging");
+    const move = (e: globalThis.PointerEvent) => {
+      const over = slotAt(e.clientX, e.clientY);
+      setDrag((d) => (d ? { ...d, x: e.clientX, y: e.clientY, over } : d));
+    };
+    const drop = () => {
+      const d = dragRef.current;
+      if (d?.over && refKey(d.over) !== refKey(d.from)) {
+        const { from, over } = d;
+        update((all) => swapped(all, from, over));
+      }
+      setDrag(null);
+    };
+    const cancel = () => setDrag(null);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && cancel();
+    const noScroll = (e: TouchEvent) => e.preventDefault();
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", drop);
+    window.addEventListener("pointercancel", cancel);
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("touchmove", noScroll, { passive: false });
+    return () => {
+      document.body.classList.remove("admin-dragging");
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", drop);
+      window.removeEventListener("pointercancel", cancel);
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("touchmove", noScroll);
+    };
+  }, [dragging, update]);
+
+  const preview =
+    drag?.over && refKey(drag.over) !== refKey(drag.from)
+      ? swapped(screens, drag.from, drag.over)
+      : screens;
 
   const save = async () => {
     setStatus("Сохраняю и нарезаю картинки…");
@@ -182,7 +248,10 @@ export function AdminEditor() {
                   onClick={() => selectCase(c.slug)}
                 >
                   {thumb ? <img src={thumb} alt="" /> : <span className="admin-case-empty" />}
-                  <span>{c.title}</span>
+                  <span>
+                    {c.title}
+                    {c.hidden && <small> · скрыт</small>}
+                  </span>
                   {savedScreensFor(c.slug) && <em>{savedScreensFor(c.slug)!.length}</em>}
                 </button>
               );
@@ -214,18 +283,20 @@ export function AdminEditor() {
         </header>
 
         <p className="admin-hint">
-          Перетащите картинки из Finder в ячейки (на телефоне — «выбрать файл»). Картинку внутри ячейки двигайте мышью или пальцем — так
-          выбирается кадр. За ⠿ ячейки можно менять местами, в том числе между экранами. При
+          Перетащите картинки из Finder в ячейки (на телефоне — «выбрать файл»). Фото перетаскиваются между ячейками (на телефоне — долгим
+          нажатием): фото из занятой ячейки встаёт на освободившееся место, в том числе между экранами.
+          Кадр внутри ячейки — кнопка ✥. При
           сохранении картинки режутся под пропорции ячейки и переводятся в WebP.
         </p>
 
-        {screens.map((screen, s) => (
+        {preview.map((screen, s) => (
           <ScreenEditor
             key={s}
             index={s}
             total={screens.length}
             screen={screen}
             busy={busy}
+            drag={drag}
             onLayout={(layout) =>
               update((all) => {
                 all[s].layout = layout;
@@ -249,7 +320,7 @@ export function AdminEditor() {
             }
             onSlot={(slot, value) => setSlot({ screen: s, slot }, value)}
             onFiles={(slot, files) => dropFiles({ screen: s, slot }, files)}
-            onSwap={(from, slot) => swap(from, { screen: s, slot })}
+            onStartDrag={(slot, value, x, y) => startDrag({ screen: s, slot }, value, x, y)}
           />
         ))}
 
@@ -263,6 +334,16 @@ export function AdminEditor() {
           + Добавить экран
         </button>
       </main>
+
+      {drag && (
+        <div className="admin-ghost" style={{ left: drag.x, top: drag.y }} aria-hidden="true">
+          {drag.slot.kind === "image" ? (
+            <img src={drag.slot.original ?? drag.slot.src} alt="" />
+          ) : (
+            <span>{drag.slot.kind}</span>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -272,25 +353,29 @@ function ScreenEditor({
   total,
   screen,
   busy,
+  drag,
   onLayout,
   onMove,
   onRemove,
   onSlot,
   onFiles,
-  onSwap,
+  onStartDrag,
 }: {
   index: number;
   total: number;
   screen: Screen;
   busy: Record<string, boolean>;
+  drag: DragState | null;
   onLayout: (layout: string) => void;
   onMove: (delta: number) => void;
   onRemove: () => void;
   onSlot: (slot: number, value: Slot | null) => void;
   onFiles: (slot: number, files: File[]) => void;
-  onSwap: (from: SlotRef, slot: number) => void;
+  onStartDrag: (slot: number, value: Slot, x: number, y: number) => void;
 }) {
   const layout = screenLayout(screen);
+  const from = drag ? refKey(drag.from) : null;
+  const over = drag?.over ? refKey(drag.over) : null;
 
   return (
     <section className="admin-screen">
@@ -339,72 +424,128 @@ function ScreenEditor({
       <CaseScreen
         screen={screen}
         className="case-screen admin-canvas"
-        renderSlot={(slot, i) => (
-          <SlotEditor
-            slot={slot}
-            ratio={layout.slots[i].ratio}
-            busy={busy[`${index}:${i}`]}
-            source={{ screen: index, slot: i }}
-            onChange={(value) => onSlot(i, value)}
-            onFiles={(files) => onFiles(i, files)}
-            onSwap={(from) => onSwap(from, i)}
-          />
-        )}
+        renderSlot={(slot, i) => {
+          const key = `${index}:${i}`;
+          return (
+            <SlotEditor
+              slot={slot}
+              ratio={layout.slots[i].ratio}
+              busy={busy[key]}
+              slotKey={key}
+              state={
+                key === over && over !== from
+                  ? "target"
+                  : key === from
+                    ? over && over !== from
+                      ? "displaced"
+                      : "origin"
+                    : null
+              }
+              onChange={(value) => onSlot(i, value)}
+              onFiles={(files) => onFiles(i, files)}
+              onStartDrag={(value, x, y) => onStartDrag(i, value, x, y)}
+            />
+          );
+        }}
       />
     </section>
   );
 }
 
+const DRAG_THRESHOLD = 6;
+const LONG_PRESS_MS = 350;
+
 function SlotEditor({
   slot,
   ratio,
   busy,
-  source,
+  slotKey,
+  state,
   onChange,
   onFiles,
-  onSwap,
+  onStartDrag,
 }: {
   slot: Slot | null;
   ratio: [number, number];
   busy?: boolean;
-  source: SlotRef;
+  slotKey: string;
+  state: "origin" | "target" | "displaced" | null;
   onChange: (slot: Slot | null) => void;
   onFiles: (files: File[]) => void;
-  onSwap: (from: SlotRef) => void;
+  onStartDrag: (slot: Slot, x: number, y: number) => void;
 }) {
   const [over, setOver] = useState(false);
+  const [framing, setFraming] = useState(false);
   const input = useRef<HTMLInputElement>(null);
   const pan = useRef<{ x: number; y: number; fx: number; fy: number; w: number; h: number } | null>(
     null,
   );
+  const press = useRef<{ x: number; y: number; timer: number; touch: boolean } | null>(null);
 
+  const cancelPress = () => {
+    if (press.current) window.clearTimeout(press.current.timer);
+    press.current = null;
+  };
+
+  useEffect(() => cancelPress, []);
+
+  // Файлы из Finder — через нативный drag&drop; фото между ячейками — через указатель.
   const onDrop = (e: DragEvent) => {
     e.preventDefault();
     setOver(false);
-    const from = e.dataTransfer.getData(SLOT_MIME);
-    if (from) {
-      onSwap(JSON.parse(from));
-      return;
-    }
     const files = Array.from(e.dataTransfer.files);
     if (files.length) onFiles(files);
   };
 
-  const onPointerDown = (e: PointerEvent<HTMLImageElement>) => {
-    if (!slot || slot.kind !== "image") return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const [fx, fy] = slot.focus ?? [50, 50];
-    pan.current = { x: e.clientX, y: e.clientY, fx, fy, w: rect.width, h: rect.height };
-    e.currentTarget.setPointerCapture(e.pointerId);
+  const onPointerDown = (e: PointerEvent<HTMLElement>) => {
+    if (!slot || e.button > 0) return;
+    if (framing && slot.kind === "image") {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const [fx, fy] = slot.focus ?? [50, 50];
+      pan.current = { x: e.clientX, y: e.clientY, fx, fy, w: rect.width, h: rect.height };
+      e.currentTarget.setPointerCapture(e.pointerId);
+      return;
+    }
+    const touch = e.pointerType !== "mouse";
+    const { clientX: x, clientY: y } = e;
+    press.current = {
+      x,
+      y,
+      touch,
+      // На телефоне перетаскивание начинается по долгому нажатию, чтобы не мешать прокрутке.
+      timer: touch
+        ? window.setTimeout(() => {
+            press.current = null;
+            navigator.vibrate?.(10);
+            onStartDrag(slot, x, y);
+          }, LONG_PRESS_MS)
+        : 0,
+    };
   };
 
-  const onPointerMove = (e: PointerEvent<HTMLImageElement>) => {
+  const onPointerMove = (e: PointerEvent<HTMLElement>) => {
     const p = pan.current;
-    if (!p || !slot) return;
-    const clamp = (v: number) => Math.min(100, Math.max(0, Math.round(v)));
-    const fx = clamp(p.fx - ((e.clientX - p.x) / p.w) * 100);
-    const fy = clamp(p.fy - ((e.clientY - p.y) / p.h) * 100);
-    onChange({ ...slot, focus: [fx, fy] });
+    if (p && slot) {
+      const clamp = (v: number) => Math.min(100, Math.max(0, Math.round(v)));
+      const fx = clamp(p.fx - ((e.clientX - p.x) / p.w) * 100);
+      const fy = clamp(p.fy - ((e.clientY - p.y) / p.h) * 100);
+      onChange({ ...slot, focus: [fx, fy] });
+      return;
+    }
+    const start = press.current;
+    if (!start || !slot) return;
+    const moved = Math.hypot(e.clientX - start.x, e.clientY - start.y);
+    if (start.touch) {
+      if (moved > 8) cancelPress();
+    } else if (moved > DRAG_THRESHOLD) {
+      cancelPress();
+      onStartDrag(slot, e.clientX, e.clientY);
+    }
+  };
+
+  const onPointerUp = () => {
+    pan.current = null;
+    cancelPress();
   };
 
   const addLink = () => {
@@ -413,11 +554,21 @@ function SlotEditor({
   };
 
   const preview = slot?.kind === "image" ? (slot.original ?? slot.src) : slot?.src;
+  const classes = [
+    "admin-slot",
+    over && "is-over",
+    framing && "is-framing",
+    state && `is-${state}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div
-      className={`admin-slot${over ? " is-over" : ""}`}
+      className={classes}
+      data-slot={slotKey}
       onDragOver={(e) => {
+        if (!e.dataTransfer.types.includes("Files")) return;
         e.preventDefault();
         setOver(true);
       }}
@@ -432,11 +583,18 @@ function SlotEditor({
           style={{ objectPosition: `${slot.focus?.[0] ?? 50}% ${slot.focus?.[1] ?? 50}%` }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
-          onPointerUp={() => (pan.current = null)}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
         />
       )}
       {slot && slot.kind !== "image" && (
-        <div className="admin-slot-link">
+        <div
+          className="admin-slot-link"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+        >
           <span>{slot.kind === "cover" ? "обложка-заглушка" : slot.kind}</span>
           <code>{slot.src}</code>
         </div>
@@ -454,16 +612,19 @@ function SlotEditor({
           </button>
         </div>
       )}
+      {framing && <div className="admin-frame-hint">Двигайте кадр</div>}
       {slot && (
         <div className="admin-slot-tools">
-          <span
-            className="admin-grip"
-            draggable
-            title="Перетащите, чтобы поменять ячейки местами"
-            onDragStart={(e) => e.dataTransfer.setData(SLOT_MIME, JSON.stringify(source))}
-          >
-            ⠿
-          </span>
+          {slot.kind === "image" && (
+            <button
+              type="button"
+              className={framing ? "is-active" : ""}
+              onClick={() => setFraming((f) => !f)}
+              title={framing ? "Готово" : "Кадр: двигать картинку внутри ячейки"}
+            >
+              {framing ? "✓" : "✥"}
+            </button>
+          )}
           <button type="button" onClick={() => input.current?.click()} title="Заменить">
             ⟳
           </button>

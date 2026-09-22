@@ -9,7 +9,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import {
-  directions,
+  visibleDirections as directions,
   findCase,
   firstImage,
   nextCase,

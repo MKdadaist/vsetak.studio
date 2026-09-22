@@ -63,6 +63,8 @@ export type CaseItem = {
   sections: CaseSection[];
   blocks?: CaseBlock[];
   placeholder?: boolean;
+  // Скрытый кейс не показывается на сайте, но остаётся в админке.
+  hidden?: boolean;
 };
 
 export type Direction = {
@@ -140,6 +142,7 @@ export const directions: Direction[] = [
       },
       {
         slug: "distilita",
+        hidden: true,
         title: "Laboratorio Distilita",
         client: "Дистиллерия и коктейльный бар",
         year: "2026",
@@ -652,7 +655,15 @@ export const directions: Direction[] = [
   },
 ];
 
-export const allCases: CaseItem[] = directions.flatMap((d) => d.cases);
+export const visibleDirections: Direction[] = directions
+  .map((d) => ({ ...d, cases: d.cases.filter((c) => !c.hidden) }))
+  .filter((d) => d.cases.length > 0);
+
+export const allCases: CaseItem[] = visibleDirections.flatMap((d) => d.cases);
+
+export function findAnyCase(slug: string): CaseItem | undefined {
+  return directions.flatMap((d) => d.cases).find((c) => c.slug === slug);
+}
 
 const coverVariants: CoverVariant[] = ["rings", "grid", "waves", "dots"];
 

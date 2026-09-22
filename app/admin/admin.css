@@ -243,12 +243,93 @@
   height: 100%;
   object-fit: cover;
   cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.admin-slot.is-framing img {
+  cursor: move;
   touch-action: none;
+}
+
+.admin-slot.is-framing {
+  outline-color: var(--ink);
+}
+
+/* Перетаскивание фото: исходная ячейка, цель и вытесненное фото. */
+body.admin-dragging,
+body.admin-dragging * {
+  cursor: grabbing !important;
   user-select: none;
 }
 
-.admin-slot img:active {
-  cursor: grabbing;
+.admin-slot.is-origin img,
+.admin-slot.is-origin .admin-slot-link {
+  opacity: 0.3;
+}
+
+.admin-slot.is-target {
+  outline-color: var(--accent);
+}
+
+.admin-slot.is-target img {
+  transform: scale(0.97);
+}
+
+.admin-slot.is-displaced img {
+  animation: admin-displaced 0.3s ease;
+}
+
+@keyframes admin-displaced {
+  from {
+    opacity: 0.2;
+    transform: scale(0.94);
+  }
+}
+
+.admin-ghost {
+  position: fixed;
+  z-index: 100;
+  width: 150px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(24, 24, 21, 0.28);
+  overflow: hidden;
+}
+
+.admin-ghost img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.admin-ghost span {
+  display: block;
+  padding: 20px;
+  background: var(--paper);
+  text-align: center;
+}
+
+.admin-frame-hint {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.admin-slot-tools button.is-active {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .admin-slot-empty,
@@ -306,10 +387,6 @@
   border-radius: 50%;
   background: rgba(249, 249, 248, 0.92);
   color: var(--ink);
-}
-
-.admin-grip {
-  cursor: grab;
 }
 
 .admin-slot-busy {
