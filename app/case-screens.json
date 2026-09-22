@@ -98,39 +98,99 @@
   ],
   "triathlon": [
     {
-      "layout": "free",
-      "ratio": [
-        4,
-        3
-      ],
+      "layout": "portrait-main",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/triathlon/01.jpg"
+          "src": "/media/triathlon/p-021-114-93f0a413-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-114-93f0a413.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-113-59b30f68-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-113-59b30f68.webp"
         }
-      ]
-    },
-    {
-      "layout": "wide",
-      "slots": [
-        null
-      ]
-    },
-    {
-      "layout": "main-3",
-      "slots": [
-        null,
-        null,
-        null,
-        null
       ]
     },
     {
       "layout": "main-2",
       "slots": [
-        null,
-        null,
-        null
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri25-5da6fc16-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri25-5da6fc16.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-116-8e5641f4-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-116-8e5641f4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-117-6fbcd3f6-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-117-6fbcd3f6.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-4",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri4w-9c8cf58c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri4w-9c8cf58c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri11w-f8ea3321-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri11w-f8ea3321.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri17w-081aa361-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri17w-081aa361.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri24w-018bf9be-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri24w-018bf9be.webp"
+        }
       ]
     }
   ],
@@ -686,6 +746,271 @@
             50
           ],
           "original": "/media/dym/src/p10-0092f6a2.webp"
+        }
+      ]
+    }
+  ],
+  "inova": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/inova/p-013-050-c4d1d682-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/p-013-050-c4d1d682.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino2-a6a4110d-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino2-a6a4110d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino3-c2d4b015-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino3-c2d4b015.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/inova/ino1-3492c754-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino1-3492c754.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino4-549c456c-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino4-549c456c.webp"
+        }
+      ]
+    }
+  ],
+  "cardio-journal": [
+    {
+      "layout": "portrait-main",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-095-93d4a46f-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-095-93d4a46f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-094-31b349d3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-094-31b349d3.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-096-341c3c30-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-096-341c3c30.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-098-5d30f2ac-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-098-5d30f2ac.webp"
+        }
+      ]
+    }
+  ],
+  "znamya": [
+    {
+      "layout": "portrait-main",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-066-19389b9d-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-066-19389b9d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-070-a0a8cd95-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-070-a0a8cd95.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-076-4f7806c4-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-076-4f7806c4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-074-0cc4dd86-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-074-0cc4dd86.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-068-0ba7fb1f-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-068-0ba7fb1f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-078-2aca03ca-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-078-2aca03ca.webp"
+        }
+      ]
+    }
+  ],
+  "logos": [
+    {
+      "layout": "trio-43",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-uberbau-21d3d557-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-uberbau-21d3d557.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-vne-925468db-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-vne-925468db.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-triathlon-3e617b44-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-triathlon-3e617b44.webp"
+        }
+      ]
+    },
+    {
+      "layout": "trio-43",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-simpla-db23bdd2-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-simpla-db23bdd2.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-inova-793e6205-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-inova-793e6205.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-kb-cb0672ec-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-kb-cb0672ec.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-brewery-eacaa9cf-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-brewery-eacaa9cf.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-sovet-3a70f6e9-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-sovet-3a70f6e9.webp"
         }
       ]
     }
