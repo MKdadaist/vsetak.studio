@@ -253,6 +253,7 @@
 .admin-slot.is-framing img {
   cursor: move;
   touch-action: none;
+  transition: transform 0.15s ease;
 }
 
 .admin-slot.is-framing {
@@ -381,12 +382,22 @@ body.admin-dragging * {
 .admin-slot-tools > * {
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 0;
   border-radius: 50%;
   background: rgba(249, 249, 248, 0.92);
   color: var(--ink);
+}
+
+.admin-slot-tools svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .admin-slot-busy {

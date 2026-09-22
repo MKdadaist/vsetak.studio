@@ -17,6 +17,7 @@ type Slot = {
   src: string;
   original?: string;
   focus?: [number, number];
+  zoom?: number;
   rotate?: number;
   rotated?: string;
   alt?: string;
@@ -148,11 +149,14 @@ export function adminPlugin(): Plugin {
     ratio: Ratio,
     focus?: [number, number],
     rotate = 0,
+    zoom = 1,
   ) {
     const [fx, fy] = focus ?? [50, 50];
     const deg = normalizeRotation(rotate);
+    const scale = Math.min(Math.max(Number(zoom) || 1, 1), 6);
     const turn = deg ? `-r${deg}` : "";
-    const key = `${ratio[0]}x${ratio[1]}-${Math.round(fx)}-${Math.round(fy)}`;
+    const mag = scale > 1 ? `-z${scale.toFixed(2)}` : "";
+    const key = `${ratio[0]}x${ratio[1]}${mag}-${Math.round(fx)}-${Math.round(fy)}`;
     const rel = `/media/${slug}/${baseName(source)}${turn}-${key}.webp`;
     const out = publicPath(rel);
     if (existsSync(out)) return rel;
@@ -171,6 +175,9 @@ export function adminPlugin(): Plugin {
       ch = H;
       cw = Math.round(H * target);
     }
+    // Зум — тот же кадр, но меньшего размера вокруг точки фокуса.
+    cw = Math.max(16, Math.round(cw / scale));
+    ch = Math.max(16, Math.round(ch / scale));
     const left = Math.min(Math.max(Math.round((fx / 100) * W - cw / 2), 0), W - cw);
     const top = Math.min(Math.max(Math.round((fy / 100) * H - ch / 2), 0), H - ch);
 
@@ -191,7 +198,7 @@ export function adminPlugin(): Plugin {
     const dir = publicPath(`/media/${slug}/`);
     if (!existsSync(dir)) return;
     for (const file of await readdir(dir)) {
-      if (!/-\d+x\d+-\d+-\d+\.webp$/.test(file)) continue;
+      if (!/-\d+x\d+(-z[\d.]+)?-\d+-\d+\.webp$/.test(file)) continue;
       if (!used.has(`/media/${slug}/${file}`)) await rm(path.join(dir, file));
     }
   }
@@ -225,7 +232,14 @@ export function adminPlugin(): Plugin {
           slots.push(slot);
           continue;
         }
-        const src = await crop(slug, source, layout.slots[i].ratio, slot.focus, slot.rotate);
+        const src = await crop(
+          slug,
+          source,
+          layout.slots[i].ratio,
+          slot.focus,
+          slot.rotate,
+          slot.zoom,
+        );
         slots.push({ ...slot, src, original: source });
       }
       processed.push({ layout: screen.layout, slots });

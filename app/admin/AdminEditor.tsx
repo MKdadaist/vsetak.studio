@@ -487,6 +487,42 @@ function ScreenEditor({
   );
 }
 
+const Icon = {
+  frame: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3" />
+    </svg>
+  ),
+  rotate: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 12a8 8 0 1 1-2.3-5.6" />
+      <path d="M20 4v5h-5" />
+    </svg>
+  ),
+  replace: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 16V4" />
+      <path d="M8 8l4-4 4 4" />
+      <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" />
+    </svg>
+  ),
+  trash: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7h16M10 7V5h4v2M6 7l1 13h10l1-13M10 11v6M14 11v6" />
+    </svg>
+  ),
+  done: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 13l4 4L19 7" />
+    </svg>
+  ),
+  grip: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 6h.01M9 12h.01M9 18h.01M15 6h.01M15 12h.01M15 18h.01" />
+    </svg>
+  ),
+};
+
 const DRAG_THRESHOLD = 6;
 const LONG_PRESS_MS = 350;
 
@@ -514,6 +550,7 @@ function SlotEditor({
   const [over, setOver] = useState(false);
   const [framing, setFraming] = useState(false);
   const input = useRef<HTMLInputElement>(null);
+  const image = useRef<HTMLImageElement>(null);
   const pan = useRef<{ x: number; y: number; fx: number; fy: number; w: number; h: number } | null>(
     null,
   );
@@ -525,6 +562,20 @@ function SlotEditor({
   };
 
   useEffect(() => cancelPress, []);
+
+  // Колесо и щипок на трекпаде меняют масштаб кадра; слушатель не пассивный,
+  // иначе страница прокручивалась бы вместо зума.
+  useEffect(() => {
+    const el = image.current;
+    if (!el || !framing || !slot) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const zoom = Math.min(6, Math.max(1, (slot.zoom ?? 1) * (1 - e.deltaY * 0.0015)));
+      onChange({ ...slot, zoom: Number(zoom.toFixed(2)) });
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [framing, slot, onChange]);
 
   // Файлы из Finder — через нативный drag&drop; фото между ячейками — через указатель.
   const onDrop = (e: DragEvent) => {
@@ -618,7 +669,12 @@ function SlotEditor({
           src={preview}
           alt=""
           draggable={false}
-          style={{ objectPosition: `${slot.focus?.[0] ?? 50}% ${slot.focus?.[1] ?? 50}%` }}
+          ref={image}
+          style={{
+            objectPosition: `${slot.focus?.[0] ?? 50}% ${slot.focus?.[1] ?? 50}%`,
+            transform: slot.zoom && slot.zoom > 1 ? `scale(${slot.zoom})` : undefined,
+            transformOrigin: `${slot.focus?.[0] ?? 50}% ${slot.focus?.[1] ?? 50}%`,
+          }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -650,7 +706,12 @@ function SlotEditor({
           </button>
         </div>
       )}
-      {framing && <div className="admin-frame-hint">Двигайте кадр</div>}
+      {framing && (
+        <div className="admin-frame-hint">
+          Двигайте кадр · колесо — масштаб
+          {slot?.zoom && slot.zoom > 1 ? ` · ${slot.zoom.toFixed(1)}×` : ""}
+        </div>
+      )}
       {slot && (
         <div className="admin-slot-tools">
           {slot.kind === "image" && (
@@ -658,21 +719,35 @@ function SlotEditor({
               type="button"
               className={framing ? "is-active" : ""}
               onClick={() => setFraming((f) => !f)}
-              title={framing ? "Готово" : "Кадр: двигать картинку внутри ячейки"}
+              onDoubleClick={() => slot && onChange({ ...slot, zoom: undefined, focus: [50, 50] })}
+              title={
+                framing
+                  ? "Готово (двойной клик — сбросить кадр)"
+                  : "Кадр: двигать и масштабировать картинку внутри ячейки"
+              }
             >
-              {framing ? "✓" : "✥"}
+              {framing ? Icon.done : Icon.frame}
             </button>
           )}
           {slot.kind === "image" && (
-            <button type="button" onClick={onRotate} disabled={busy} title="Повернуть на 90° по часовой">
-              ↻
+            <button
+              type="button"
+              onClick={onRotate}
+              disabled={busy}
+              title="Повернуть на 90° по часовой"
+            >
+              {Icon.rotate}
             </button>
           )}
-          <button type="button" onClick={() => input.current?.click()} title="Заменить">
-            ⟳
+          <button
+            type="button"
+            onClick={() => input.current?.click()}
+            title="Заменить файл"
+          >
+            {Icon.replace}
           </button>
-          <button type="button" onClick={() => onChange(null)} title="Очистить">
-            ✕
+          <button type="button" onClick={() => onChange(null)} title="Очистить ячейку">
+            {Icon.trash}
           </button>
         </div>
       )}
