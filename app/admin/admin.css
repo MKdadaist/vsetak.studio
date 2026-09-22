@@ -450,6 +450,19 @@ body.admin-dragging * {
   .admin-layouts {
     order: 3;
     flex-basis: 100%;
+    align-items: center;
+  }
+
+  /* Иконки схем перестраиваются так же, как сами экраны на этой ширине:
+     главная горизонтальная ячейка сверху, остальные под ней. */
+  .admin-layout {
+    height: auto;
+    min-height: 34px;
+  }
+
+  .case-screen.admin-layout-thumb[data-stack] {
+    width: 34px;
+    height: auto;
   }
 
   .admin-slot-tools {
