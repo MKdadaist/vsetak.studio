@@ -18,7 +18,7 @@ import {
 } from "../cases";
 import { layoutRatio, screenLayout, type Screen } from "../screens";
 import { CaseCover } from "./CaseCover";
-import { CaseScreen } from "./CaseScreen";
+import { CaseScreen, SlotMedia } from "./CaseScreen";
 
 export function MediaView({ m }: { m: MediaItem }) {
   if (m.kind === "cover") {
@@ -310,6 +310,30 @@ function Block({ block, item }: { block: CaseBlock; item: CaseItem }) {
           {block.caption && <figcaption>{block.caption}</figcaption>}
         </figure>
       );
+
+    case "tiles": {
+      const slots = caseScreens(item).flatMap((screen) => {
+        const layout = screenLayout(screen);
+        return layout.slots
+          .map((def, i) => ({ slot: screen.slots[i], ratio: def.ratio }))
+          .filter((t) => t.slot);
+      });
+      return (
+        <div className={`case-block is-full case-tiles is-cols-${block.columns ?? 3}`}>
+          <div className="case-grid">
+            {slots.map(({ slot, ratio }, i) => (
+              <div
+                className="case-block-frame"
+                style={{ aspectRatio: `${ratio[0]} / ${ratio[1]}` }}
+                key={`${slot!.src}-${i}`}
+              >
+                <SlotMedia slot={slot!} />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
 
     case "quote":
       return (

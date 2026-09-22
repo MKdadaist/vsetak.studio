@@ -608,9 +608,10 @@ html.case-open .case-pane {
   grid-column: 3 / span 1;
 }
 
+/* Роль занимает колонки 4–8: короткая встаёт в одну строку, длинная переносится
+   внутри, не наезжая на статус и ссылку. */
 .case-facts > .is-role {
   grid-column: 4 / span 5;
-  white-space: nowrap;
 }
 
 .case-facts dt {
@@ -718,6 +719,35 @@ html.case-open .case-pane {
 
 .case-grid.is-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-tiles {
+  margin-top: 0;
+}
+
+.case-tiles .case-grid {
+  gap: 12px;
+}
+
+.case-tiles.is-cols-2 .case-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-tiles.is-cols-3 .case-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-tiles.is-cols-4 .case-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.case-tiles .case-block-frame {
+  position: relative;
+}
+
+.case-tiles .case-media {
+  position: absolute;
+  inset: 0;
 }
 
 .case-text h2 {
@@ -1164,9 +1194,11 @@ html.case-open .case-pane {
     grid-column: 1 / -1;
   }
 
-  .case-grid.is-cols-3 {
+  .case-grid.is-cols-3,
+  .case-tiles.is-cols-3 .case-grid,
+  .case-tiles.is-cols-4 .case-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 8px;
   }
 
   .site-footer {

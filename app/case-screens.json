@@ -751,34 +751,66 @@
       ]
     },
     {
-      "layout": "main-2",
+      "layout": "slides-3",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/rko/ph-expert-af97bffa-16x9-50-50.webp",
+          "src": "/media/rko/mockup-expert-dc46cb11-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko/src/ph-expert-af97bffa.webp"
+          "original": "/media/rko/src/mockup-expert-dc46cb11.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko/ph-timeline-ae23bb6d-4x3-50-50.webp",
+          "src": "/media/rko/mockup-topic-72d0b730-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko/src/ph-timeline-ae23bb6d.webp"
+          "original": "/media/rko/src/mockup-topic-72d0b730.webp"
         },
         {
           "kind": "image",
-          "src": "/media/rko/ph-history-2f2e88f3-4x3-50-50.webp",
+          "src": "/media/rko/mockup-recs-40884817-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko/src/ph-history-2f2e88f3.webp"
+          "original": "/media/rko/src/mockup-recs-40884817.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-calendar-0e45c3c4-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-calendar-0e45c3c4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/cover-a-1c9c2e67-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/cover-a-1c9c2e67.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/cover-b-dfe3da7e-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/cover-b-dfe3da7e.webp"
         }
       ]
     },
@@ -814,12 +846,12 @@
         },
         {
           "kind": "image",
-          "src": "/media/rko/ph-search-f39016c1-4x3-50-50.webp",
+          "src": "/media/rko/ph-timeline-ae23bb6d-4x3-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/rko/src/ph-search-f39016c1.webp"
+          "original": "/media/rko/src/ph-timeline-ae23bb6d.webp"
         }
       ]
     }
