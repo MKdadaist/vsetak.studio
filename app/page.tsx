@@ -1,22 +1,17 @@
-const introLines = ["Привет,", "я\u00A0Марк Калинин"];
-const intro = introLines.join(" ");
+import { WorkDeck } from "./components/WorkDeck";
 
-const services = [
-  "Айдентика и\u00A0брендбуки",
-  "Сайты и\u00A0цифровые сервисы",
-  "Дизайн-системы",
-  "Данные, автоматизация и\u00A0ИИ",
-];
+const introLines = ["Привет,", "я Марк Калинин"];
+const intro = introLines.join(" ");
 
 export default function Home() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Всё так — в начало">
+        <a className="wordmark" href="#top" aria-label="Всё так — в начало">
           Всё так<span className="wordmark-dot">.</span>
         </a>
 
-        <p className="eyebrow">Студия цифровых продуктов</p>
+        <p className="eyebrow">Контент, дизайн, концепции</p>
       </header>
 
       <section className="hero" id="top" aria-labelledby="intro-heading">
@@ -41,7 +36,7 @@ export default function Home() {
                         }
                         key={`${character}-${index}`}
                       >
-                        {character === " " ? "\u00A0" : character}
+                        {character === " " ? " " : character}
                       </span>
                     );
                   })}
@@ -57,39 +52,29 @@ export default function Home() {
         <div className="hero-copy">
           <p className="lead">
             {
-              "«Всё так» — моя моностудия дизайна и\u00A0разработки цифровых продуктов."
+              "«Всё так» — моя моностудия контента, дизайна и цифровых продуктов."
             }
           </p>
           <p>
             {
-              "Создаю айдентику, фирменные стили и\u00A0брендбуки. Проектирую сайты, сервисы и\u00A0интерфейсы. Разрабатываю дизайн-системы и\u00A0интегрирую их в\u00A0цифровые продукты."
+              "Создаю айдентику, фирменные стили и брендбуки. Делаю издания, каталоги и экспозиции. Проектирую сайты, сервисы и интерфейсы. Разрабатываю дизайн-системы и концепции пространств."
             }
           </p>
           <p>
             {
-              "Работаю с\u00A0данными, автоматизацией и\u00A0искусственным интеллектом. Собираю под\u00A0конкретные задачи бизнеса цельные системы — от\u00A0идеи и\u00A0визуального языка до\u00A0работающего продукта"
+              "Работаю с данными, автоматизацией и искусственным интеллектом. Собираю под конкретные задачи бизнеса цельные системы — от идеи и визуального языка до работающего продукта"
             }
           </p>
         </div>
       </section>
 
-      <section className="capabilities" aria-label="Направления работы">
-        <p className="section-label">Что делаем</p>
-        <ul>
-          {services.map((service, index) => (
-            <li key={service}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {service}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <WorkDeck />
 
       <footer className="site-footer">
         <p className="footer-statement">
           Дизайн, технологии
           <br />
-          {"и\u00A0здравый смысл."}
+          {"и здравый смысл."}
           <br />
           Чтобы всё было так.
         </p>

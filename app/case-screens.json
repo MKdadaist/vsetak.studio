@@ -1,0 +1,1054 @@
+{
+  "vne-establishmenta": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00008-60fcd97a-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00008-60fcd97a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00288-f23c43c7-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00288-f23c43c7.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00576-7e884b6b-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00576-7e884b6b.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00310-8c544f74-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00310-8c544f74.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00321-71ca3164-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00321-71ca3164.webp"
+        }
+      ]
+    },
+    {
+      "layout": "trio",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00002-4dc5eca5-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00002-4dc5eca5.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00301-be863632-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00301-be863632.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/vne-establishmenta/dsc00005-a5b6b174-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/vne-establishmenta/src/dsc00005-a5b6b174.webp"
+        }
+      ]
+    }
+  ],
+  "triathlon": [
+    {
+      "layout": "portrait-main",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-114-93f0a413-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-114-93f0a413.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-113-59b30f68-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-113-59b30f68.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri25-5da6fc16-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri25-5da6fc16.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-116-8e5641f4-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-116-8e5641f4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/p-021-117-6fbcd3f6-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/p-021-117-6fbcd3f6.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-4",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri4w-9c8cf58c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri4w-9c8cf58c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri11w-f8ea3321-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri11w-f8ea3321.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri17w-081aa361-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri17w-081aa361.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/tri24w-018bf9be-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/triathlon/src/tri24w-018bf9be.webp"
+        }
+      ]
+    }
+  ],
+  "spectres": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7131-0c835d4a-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7131-0c835d4a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7122-47c2316a-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7122-47c2316a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7126-ef711c33-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7126-ef711c33.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-portraits",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/timeline-front-6a9844ce-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/timeline-front-6a9844ce.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_3942-2fca5008-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_3942-2fca5008.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/pack-front-aa1d8166-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/pack-front-aa1d8166.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/spectres/ghosts-mockup-small-7cd78f70-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/ghosts-mockup-small-7cd78f70.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7109-85ce73a9-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7109-85ce73a9.webp"
+        }
+      ]
+    }
+  ],
+  "hlebozavod": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-043-54f4849b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-043-54f4849b.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-041-5452e8db-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-041-5452e8db.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-042-c4c145b7-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-042-c4c145b7.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз4-ffc870da-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз4-ffc870da.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз3-459e2889-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз3-459e2889.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хзклин-9576520e-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хзклин-9576520e.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз1-7211b772-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз1-7211b772.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/хз-супрема-78c1f733-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/хз-супрема-78c1f733.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/hlebozavod/p-011-044-e1b1aa6e-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/hlebozavod/src/p-011-044-e1b1aa6e.webp"
+        }
+      ]
+    }
+  ],
+  "arsenal": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_river-cba07bdd-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_river-cba07bdd.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_explotionscheme-4385ff3a-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_explotionscheme-4385ff3a.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_museum1-0492e203-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_museum1-0492e203.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_plan1-c1ac713f-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_plan1-c1ac713f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_academy-521623a2-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_academy-521623a2.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_flovershop-07f07688-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_flovershop-07f07688.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/arsenal/arsenal-museum-00-1f6e8d91-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/arsenal-museum-00-1f6e8d91.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_newconstr-0dd3e1e0-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars_newconstr-0dd3e1e0.webp"
+        }
+      ]
+    }
+  ],
+  "inova": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/inova/p-013-050-c4d1d682-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/p-013-050-c4d1d682.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino2-a6a4110d-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino2-a6a4110d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino3-c2d4b015-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino3-c2d4b015.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/inova/ino1-3492c754-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino1-3492c754.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/ino4-549c456c-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino4-549c456c.webp"
+        }
+      ]
+    }
+  ],
+  "cardio-journal": [
+    {
+      "layout": "portrait-main",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-095-93d4a46f-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-095-93d4a46f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-094-31b349d3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-094-31b349d3.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-096-341c3c30-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-096-341c3c30.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/cardio-journal/p-018-098-5d30f2ac-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/cardio-journal/src/p-018-098-5d30f2ac.webp"
+        }
+      ]
+    }
+  ],
+  "znamya": [
+    {
+      "layout": "portrait-main",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-066-19389b9d-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-066-19389b9d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-070-a0a8cd95-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-070-a0a8cd95.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-076-4f7806c4-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-076-4f7806c4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-074-0cc4dd86-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-074-0cc4dd86.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-068-0ba7fb1f-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-068-0ba7fb1f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-078-2aca03ca-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-078-2aca03ca.webp"
+        }
+      ]
+    }
+  ],
+  "logos": [
+    {
+      "layout": "trio-43",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-uberbau-21d3d557-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-uberbau-21d3d557.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-vne-925468db-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-vne-925468db.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-triathlon-3e617b44-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-triathlon-3e617b44.webp"
+        }
+      ]
+    },
+    {
+      "layout": "trio-43",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-simpla-db23bdd2-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-simpla-db23bdd2.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-inova-793e6205-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-inova-793e6205.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-kb-cb0672ec-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-kb-cb0672ec.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-brewery-eacaa9cf-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-brewery-eacaa9cf.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/logos/logo-sovet-3a70f6e9-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/logos/src/logo-sovet-3a70f6e9.webp"
+        }
+      ]
+    }
+  ],
+  "rko": [
+    {
+      "layout": "single",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-home-34e0a0d8-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-home-34e0a0d8.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-expert-dc46cb11-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-expert-dc46cb11.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-topic-72d0b730-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-topic-72d0b730.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-recs-40884817-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-recs-40884817.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/rko/mockup-calendar-0e45c3c4-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/mockup-calendar-0e45c3c4.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/cover-a-1c9c2e67-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/cover-a-1c9c2e67.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/cover-b-dfe3da7e-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/cover-b-dfe3da7e.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/rko/ph-builder-1c042c29-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/ph-builder-1c042c29.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/ph-publications-46909e61-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/ph-publications-46909e61.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/ph-events-a0179c3f-3x4-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/ph-events-a0179c3f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/rko/ph-timeline-ae23bb6d-4x3-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/rko/src/ph-timeline-ae23bb6d.webp"
+        }
+      ]
+    }
+  ],
+  "presentations": [
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/a1-1dd13b9b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/a1-1dd13b9b.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/a2-dfcbc1b3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/a2-dfcbc1b3.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/a3-86b9a18b-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/a3-86b9a18b.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/a1w-727999e8-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/a1w-727999e8.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/a2w-9fc417ab-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/a2w-9fc417ab.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/a3w-b4363890-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/a3w-b4363890.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/dym/p1-5f13122c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/dym/src/p1-5f13122c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/dym/p4-07694d48-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/dym/src/p4-07694d48.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/dym/p8-cc4f53ef-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/dym/src/p8-cc4f53ef.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-4",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/b1-e92f0896-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/b1-e92f0896.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/b2-c97dd166-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/b2-c97dd166.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/b3-143b0509-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/b3-143b0509.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/s7/b4-98ee9808-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/b4-98ee9808.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/b1-b322f3f1-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/b1-b322f3f1.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/b2-deeb86ef-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/b2-deeb86ef.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/b3-0513c6e3-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/b3-0513c6e3.webp"
+        }
+      ]
+    },
+    {
+      "layout": "slides-3",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/c1-8bfd056d-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/c1-8bfd056d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/c2-59bcb18c-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/c2-59bcb18c.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/az-education/c3-47aba0ea-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/c3-47aba0ea.webp"
+        }
+      ]
+    }
+  ]
+}

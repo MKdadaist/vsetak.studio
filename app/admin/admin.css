@@ -1,0 +1,492 @@
+.admin {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.admin-off {
+  padding: 40px;
+  font-family: var(--sans);
+}
+
+.admin-cases {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px 16px 40px;
+  border-right: 1px solid var(--line);
+}
+
+.admin-brand {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.admin-brand span {
+  color: var(--accent);
+}
+
+.admin-cases h2 {
+  margin: 18px 0 6px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-case {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 5px 6px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-case:hover {
+  background: var(--cover-bg);
+}
+
+.admin-case.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.admin-case img,
+.admin-case-empty {
+  width: 44px;
+  height: 30px;
+  border-radius: 3px;
+  object-fit: cover;
+  background: var(--cover-bg);
+}
+
+.admin-case em {
+  font-style: normal;
+  opacity: 0.6;
+}
+
+.admin-main {
+  padding: 0 32px 80px;
+}
+
+.admin-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.admin-bar h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.admin-bar p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-status {
+  color: var(--muted);
+}
+
+.admin button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-actions button,
+.admin-add {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.admin-actions button.is-primary {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.admin-actions button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.admin-hint {
+  max-width: 80ch;
+  margin: 16px 0 8px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.admin-screen {
+  margin-top: 28px;
+}
+
+.admin-screen-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.admin-layouts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+
+.admin-layout {
+  display: grid;
+  place-items: center;
+  height: 34px;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.admin-layout:hover {
+  border-color: var(--line);
+}
+
+.admin-layout.is-active {
+  border-color: var(--accent);
+}
+
+.case-screen.admin-layout-thumb {
+  height: 24px;
+  width: auto;
+  gap: 2px;
+}
+
+.admin-layout-thumb .case-slot {
+  background: #d3d1ca;
+}
+
+.admin-layout.is-active .case-slot {
+  background: var(--accent);
+}
+
+.admin-screen-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.admin-screen-tools button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.admin-screen-tools button:disabled {
+  opacity: 0.3;
+}
+
+/* Холст редактора ограничен по высоте так же, как экран на сайте. */
+.case-screen.admin-canvas {
+  width: min(100%, calc((100vh - 220px) * var(--screen-ratio)));
+}
+
+.admin-slot {
+  position: absolute;
+  inset: 0;
+  outline: 2px dashed transparent;
+  outline-offset: -2px;
+}
+
+.admin-slot.is-over {
+  outline-color: var(--accent);
+  background: rgba(159, 53, 232, 0.08);
+}
+
+.admin-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.admin-slot.is-framing img {
+  cursor: move;
+  touch-action: none;
+  transition: transform 0.15s ease;
+}
+
+.admin-slot.is-framing {
+  outline-color: var(--ink);
+}
+
+/* Перетаскивание фото: исходная ячейка, цель и вытесненное фото. */
+body.admin-dragging,
+body.admin-dragging * {
+  cursor: grabbing !important;
+  user-select: none;
+}
+
+.admin-slot.is-origin img,
+.admin-slot.is-origin .admin-slot-link {
+  opacity: 0.3;
+}
+
+.admin-slot.is-target {
+  outline-color: var(--accent);
+}
+
+.admin-slot.is-target img {
+  transform: scale(0.97);
+}
+
+.admin-slot.is-displaced img {
+  animation: admin-displaced 0.3s ease;
+}
+
+@keyframes admin-displaced {
+  from {
+    opacity: 0.2;
+    transform: scale(0.94);
+  }
+}
+
+.admin-ghost {
+  position: fixed;
+  z-index: 100;
+  width: 150px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(24, 24, 21, 0.28);
+  overflow: hidden;
+}
+
+.admin-ghost img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.admin-ghost span {
+  display: block;
+  padding: 20px;
+  background: var(--paper);
+  text-align: center;
+}
+
+.admin-frame-hint {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.admin-slot-tools button.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.admin-slot-empty,
+.admin-slot-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  padding: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.admin-slot-empty span {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.admin-slot-empty button {
+  border: 0;
+  background: none;
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.admin-slot-link code {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-slot-tools {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.admin-slot:hover .admin-slot-tools {
+  opacity: 1;
+}
+
+.admin-slot-tools > * {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(249, 249, 248, 0.92);
+  color: var(--ink);
+}
+
+.admin-slot-tools svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.admin-slot-busy {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(249, 249, 248, 0.8);
+}
+
+.admin-add {
+  margin-top: 28px;
+}
+
+/* На телефоне: список кейсов сверху, инструменты ячеек видны всегда (наведения нет). */
+@media (max-width: 760px) {
+  .admin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-cases {
+    position: static;
+    height: auto;
+    max-height: 38vh;
+    padding: 14px 14px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .admin-main {
+    padding: 0 14px 60px;
+  }
+
+  .admin-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admin-bar h1 {
+    font-size: 22px;
+  }
+
+  .admin-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .admin-actions .is-primary {
+    margin-left: auto;
+  }
+
+  .admin-hint {
+    font-size: 12px;
+  }
+
+  .admin-screen-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admin-layouts {
+    order: 3;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  /* Иконки схем перестраиваются так же, как сами экраны на этой ширине:
+     главная горизонтальная ячейка сверху, остальные под ней. */
+  .admin-layout {
+    height: auto;
+    min-height: 34px;
+  }
+
+  .case-screen.admin-layout-thumb[data-stack] {
+    width: 34px;
+    height: auto;
+  }
+
+  .admin-slot-tools {
+    opacity: 1;
+  }
+
+  .case-screen.admin-canvas {
+    width: 100%;
+  }
+}
+
+@media (hover: none) {
+  .admin-slot-tools {
+    opacity: 1;
+  }
+}
