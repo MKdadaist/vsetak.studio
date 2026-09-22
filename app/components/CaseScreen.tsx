@@ -73,8 +73,13 @@ export function CaseScreen({
     gridTemplateAreas: layout.areas.map((row) => `"${row}"`).join(" "),
   } as CSSProperties;
 
+  // На телефоне экран с главной горизонтальной картинкой раскладывается в столбик,
+  // остальные (пары, триптихи) остаются рядом.
+  const [w, h] = layout.slots[0].ratio;
+  const stack = layout.slots.length > 1 && w > h;
+
   return (
-    <div className={className} style={style}>
+    <div className={className} style={style} data-stack={stack || undefined}>
       {layout.slots.map((def, i) => {
         const slot = screen.slots[i] ?? null;
         return (

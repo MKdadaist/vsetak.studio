@@ -909,6 +909,64 @@ html.case-open .case-pane {
   }
 }
 
+/* Свайп-галерея на телефоне: экраны встают в ленту, каждый — на всю ширину. */
+.case-swipe {
+  display: flex;
+  align-items: flex-start;
+  transition: height 0.3s ease;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.case-swipe::-webkit-scrollbar {
+  display: none;
+}
+
+.case-swipe-page {
+  flex: 0 0 100%;
+  padding: 0 18px;
+  scroll-snap-align: start;
+}
+
+.case-swipe-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.case-swipe-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.3s ease;
+}
+
+.case-swipe-dots span.is-active {
+  background: var(--ink);
+}
+
+/* Планшет: врезку переносим под текст, роль может переноситься. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .case-section.has-aside > p {
+    grid-column: 4 / span 7;
+  }
+
+  .case-aside {
+    grid-column: 4 / span 7;
+    grid-row: auto;
+    max-width: 460px;
+    margin-top: 18px;
+  }
+
+  .case-facts > .is-role {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 760px) {
   .site-shell {
     padding: 18px 18px 22px;
@@ -927,12 +985,13 @@ html.case-open .case-pane {
   }
 
   .eyebrow {
-    grid-column: 3 / -1;
+    grid-column: 2 / -1;
     text-align: right;
+    white-space: nowrap;
   }
 
   .hero {
-    padding: 84px 0 92px;
+    padding: 44px 0 56px;
   }
 
   .intro {
@@ -952,21 +1011,22 @@ html.case-open .case-pane {
 
   .hero-copy {
     grid-column: 1 / -1;
-    margin-top: 100px;
-    font-size: 19px;
+    margin-top: 36px;
+    font-size: 18px;
   }
 
   .hero-copy .lead {
     max-width: 90%;
+    margin-bottom: 1.4em;
   }
 
   .work {
-    padding-bottom: 92px;
+    padding-bottom: 64px;
   }
 
   .section-label {
     grid-column: 1 / -1;
-    margin-bottom: 28px;
+    margin-bottom: 8px;
   }
 
   .work-list {
@@ -981,13 +1041,23 @@ html.case-open .case-pane {
   }
 
   .case-card {
-    grid-template-columns: 96px 1fr auto;
+    grid-template-columns: 112px 1fr;
     column-gap: 14px;
-    padding: 14px 0;
+    padding: 12px 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .case-card:active {
+    opacity: 0.6;
   }
 
   .case-card-cover {
-    width: 96px;
+    width: 112px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .case-card-arrow {
+    display: none;
   }
 
   .case-card-title {
@@ -999,7 +1069,15 @@ html.case-open .case-pane {
   }
 
   .case-header {
+    gap: 16px;
     padding-top: 18px;
+  }
+
+  .case-header-meta {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .case-hero {
@@ -1038,23 +1116,27 @@ html.case-open .case-pane {
   }
 
   .case-gallery {
-    width: 100%;
+    width: auto;
+    margin: 0 -18px;
   }
 
   .case-screen {
+    gap: 6px;
+  }
+
+  .case-screen[data-stack] {
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: none !important;
     grid-template-areas: none !important;
-    gap: 8px;
     aspect-ratio: auto;
   }
 
-  .case-slot {
+  .case-screen[data-stack] .case-slot {
     grid-area: auto !important;
     aspect-ratio: var(--slot-ratio);
   }
 
-  .case-slot:first-child {
+  .case-screen[data-stack] .case-slot:first-child {
     grid-column: 1 / -1 !important;
   }
 

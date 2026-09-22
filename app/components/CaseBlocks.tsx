@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type CSSProperties,
+} from "react";
 import {
   caseBlocks,
   caseScreens,
@@ -51,21 +58,98 @@ export function MediaView({ m }: { m: MediaItem }) {
   );
 }
 
+const phoneQuery = "(max-width: 760px)";
+
+function subscribePhone(onChange: () => void) {
+  const mq = window.matchMedia(phoneQuery);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+function useIsPhone() {
+  return useSyncExternalStore(
+    subscribePhone,
+    () => window.matchMedia(phoneQuery).matches,
+    () => false,
+  );
+}
+
+// На телефоне экраны листаются свайпом: нативная прокрутка с привязкой к экрану.
+function SwipeGallery({ screens }: { screens: Screen[] }) {
+  const [index, setIndex] = useState(0);
+  const strip = useRef<HTMLDivElement>(null);
+
+  const onScroll = () => {
+    const el = strip.current;
+    if (!el) return;
+    setIndex(Math.round(el.scrollLeft / el.clientWidth));
+  };
+
+  // Высота ленты — по текущему экрану, чтобы под низкими экранами не было пустоты.
+  useEffect(() => {
+    const el = strip.current;
+    const page = el?.children[index] as HTMLElement | undefined;
+    if (!el || !page) return;
+    const fit = () => {
+      el.style.height = `${page.offsetHeight}px`;
+    };
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(page);
+    return () => observer.disconnect();
+  }, [index]);
+
+  return (
+    <figure className="case-gallery is-swipe">
+      <div className="case-swipe" ref={strip} onScroll={onScroll}>
+        {screens.map((screen, i) => (
+          <div className="case-swipe-page" key={i}>
+            <CaseScreen screen={screen} />
+          </div>
+        ))}
+      </div>
+      {screens.length > 1 && (
+        <div className="case-swipe-dots" aria-hidden="true">
+          {screens.map((_, i) => (
+            <span key={i} className={i === index ? "is-active" : ""} />
+          ))}
+        </div>
+      )}
+    </figure>
+  );
+}
+
 function Gallery({ screens }: { screens: Screen[] }) {
+  const isPhone = useIsPhone();
   const [index, setIndex] = useState(0);
   const [fading, setFading] = useState(false);
   const timer = useRef<number>(0);
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
-  const go = (delta: number) => {
-    if (screens.length < 2 || fading) return;
-    setFading(true);
-    timer.current = window.setTimeout(() => {
-      setIndex((i) => (i + delta + screens.length) % screens.length);
-      setFading(false);
-    }, 260);
-  };
+  const go = useCallback(
+    (delta: number) => {
+      if (screens.length < 2 || fading) return;
+      setFading(true);
+      timer.current = window.setTimeout(() => {
+        setIndex((i) => (i + delta + screens.length) % screens.length);
+        setFading(false);
+      }, 260);
+    },
+    [screens.length, fading],
+  );
+
+  useEffect(() => {
+    if (isPhone || screens.length < 2) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") go(1);
+      if (e.key === "ArrowLeft") go(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go, isPhone, screens.length]);
+
+  if (isPhone) return <SwipeGallery screens={screens} />;
 
   const current = screens[index];
   if (!current) return null;

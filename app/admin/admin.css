@@ -323,3 +323,69 @@
 .admin-add {
   margin-top: 28px;
 }
+
+/* На телефоне: список кейсов сверху, инструменты ячеек видны всегда (наведения нет). */
+@media (max-width: 760px) {
+  .admin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-cases {
+    position: static;
+    height: auto;
+    max-height: 38vh;
+    padding: 14px 14px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .admin-main {
+    padding: 0 14px 60px;
+  }
+
+  .admin-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admin-bar h1 {
+    font-size: 22px;
+  }
+
+  .admin-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .admin-actions .is-primary {
+    margin-left: auto;
+  }
+
+  .admin-hint {
+    font-size: 12px;
+  }
+
+  .admin-screen-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admin-layouts {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .admin-slot-tools {
+    opacity: 1;
+  }
+
+  .case-screen.admin-canvas {
+    width: 100%;
+  }
+}
+
+@media (hover: none) {
+  .admin-slot-tools {
+    opacity: 1;
+  }
+}
