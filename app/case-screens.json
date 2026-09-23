@@ -5,21 +5,21 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/vne-establishmenta/dsc00008-60fcd97a-1618x1000-50-50.webp",
+          "src": "/media/vne-establishmenta/vne-covers-wall-993d749a-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/vne-establishmenta/src/dsc00008-60fcd97a.webp"
+          "original": "/media/vne-establishmenta/src/vne-covers-wall-993d749a.webp"
         },
         {
           "kind": "image",
-          "src": "/media/vne-establishmenta/dsc00288-f23c43c7-1000x618-50-50.webp",
+          "src": "/media/vne-establishmenta/vne-hall-1-bb2ebae0-1000x618-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/vne-establishmenta/src/dsc00288-f23c43c7.webp"
+          "original": "/media/vne-establishmenta/src/vne-hall-1-bb2ebae0.webp"
         },
         {
           "kind": "image",
@@ -56,16 +56,16 @@
       ]
     },
     {
-      "layout": "trio",
+      "layout": "main-portraits",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/vne-establishmenta/dsc00002-4dc5eca5-618x1000-50-50.webp",
+          "src": "/media/vne-establishmenta/vne-hall-2-f35d3c33-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/vne-establishmenta/src/dsc00002-4dc5eca5.webp"
+          "original": "/media/vne-establishmenta/src/vne-hall-2-f35d3c33.webp"
         },
         {
           "kind": "image",
@@ -788,85 +788,26 @@
         },
         {
           "kind": "image",
-          "src": "/media/rko/mockup-recs-40884817-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/mockup-recs-40884817.webp"
-        }
-      ]
-    },
-    {
-      "layout": "slides-3",
-      "slots": [
-        {
-          "kind": "image",
           "src": "/media/rko/mockup-calendar-0e45c3c4-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/rko/src/mockup-calendar-0e45c3c4.webp"
-        },
+        }
+      ]
+    },
+    {
+      "layout": "single",
+      "slots": [
         {
           "kind": "image",
-          "src": "/media/rko/cover-a-1c9c2e67-16x9-50-50.webp",
+          "src": "/media/rko/cover-a-1c9c2e67-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/rko/src/cover-a-1c9c2e67.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/rko/cover-b-dfe3da7e-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/cover-b-dfe3da7e.webp"
-        }
-      ]
-    },
-    {
-      "layout": "main-3",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/rko/ph-builder-1c042c29-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/ph-builder-1c042c29.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/rko/ph-publications-46909e61-1000x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/ph-publications-46909e61.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/rko/ph-events-a0179c3f-618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/ph-events-a0179c3f.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/rko/ph-timeline-ae23bb6d-1000x382-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/rko/src/ph-timeline-ae23bb6d.webp"
         }
       ]
     }
