@@ -1180,5 +1180,117 @@
         }
       ]
     }
+  ],
+  "uberbau-books": [
+    {
+      "layout": "main-portraits",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-mockup-6af8e52d-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-mockup-6af8e52d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-cover-front-60210435-618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-cover-front-60210435.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-titul-2da50bb5-618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-titul-2da50bb5.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-spread-doc-4004cf85-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-spread-doc-4004cf85.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-illustrations-948afbc2-1000x618-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-illustrations-948afbc2.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/fen-ill-strip-ab99771a-1000x382-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/fen-ill-strip-ab99771a.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-portrait",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/ist-cover-flat-c87a78fb-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/ist-cover-flat-c87a78fb.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/ist-scheme-9e00f96d-618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/ist-scheme-9e00f96d.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/ist-spread-titul-raw-c2cd540b-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/ist-spread-titul-raw-c2cd540b.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/uberbau-books/ist-spread-raw-b8a58d03-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/uberbau-books/src/ist-spread-raw-b8a58d03.webp"
+        }
+      ]
+    }
   ]
 }
