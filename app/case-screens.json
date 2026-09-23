@@ -1080,67 +1080,35 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/catalogs/dsc02034-9e2b2217-1618x1000-50-50.webp",
+          "src": "/media/catalogs/поймать-большу-рыбу-b26f0f34-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/catalogs/src/dsc02034-9e2b2217.webp"
+          "original": "/media/catalogs/src/поймать-большу-рыбу-b26f0f34.webp"
         },
         {
           "kind": "image",
-          "src": "/media/catalogs/dsc02025-15100874-1000x618-50-50.webp",
+          "src": "/media/catalogs/разворот-жуки-78b6f32d-1000x618-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/catalogs/src/dsc02025-15100874.webp"
+          "original": "/media/catalogs/src/разворот-жуки-78b6f32d.webp"
         },
         {
           "kind": "image",
-          "src": "/media/catalogs/dsc02079-e6913437-1000x382-50-50.webp",
+          "src": "/media/catalogs/разворот-2-ad1838e0-1000x382-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/catalogs/src/dsc02079-e6913437.webp"
+          "original": "/media/catalogs/src/разворот-2-ad1838e0.webp"
         }
       ]
     },
     {
-      "layout": "main-2",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/catalogs/dsc00535-d88d7d8f-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/catalogs/src/dsc00535-d88d7d8f.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/catalogs/dsc00483-a0d277c7-1000x618-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/catalogs/src/dsc00483-a0d277c7.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/catalogs/dsc00547-fdb9bc53-1000x382-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/catalogs/src/dsc00547-fdb9bc53.webp"
-        }
-      ]
-    },
-    {
-      "layout": "main-2",
+      "layout": "pair",
       "slots": [
         {
           "kind": "image",
@@ -1153,21 +1121,12 @@
         },
         {
           "kind": "image",
-          "src": "/media/catalogs/cover-b19aa208-1000x618-50-50.webp",
+          "src": "/media/catalogs/dsc00535-d88d7d8f-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/catalogs/src/cover-b19aa208.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/catalogs/dsc01757-d8df77b7-1000x382-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/catalogs/src/dsc01757-d8df77b7.webp"
+          "original": "/media/catalogs/src/dsc00535-d88d7d8f.webp"
         }
       ]
     },
