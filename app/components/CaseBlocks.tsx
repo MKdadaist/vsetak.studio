@@ -251,7 +251,7 @@ function Block({
               </dd>
             </div>
           )}
-          {item.related && (
+          {related && (
             <div className="is-related">
               <dt>Кейс рядом</dt>
               <dd>
