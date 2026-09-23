@@ -156,8 +156,9 @@ a {
     caret-blink 0.78s 1.65s steps(1, end) infinite;
 }
 
+/* Лид начинается с 5-й колонки — там же, где ниже начинается список направлений. */
 .hero-copy {
-  grid-column: 7 / span 5;
+  grid-column: 5 / span 5;
   margin-top: clamp(70px, 10vw, 150px);
   font-size: clamp(19px, 1.55vw, 25px);
   line-height: 1.38;
