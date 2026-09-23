@@ -398,34 +398,16 @@
   ],
   "arsenal": [
     {
-      "layout": "main-2",
+      "layout": "single",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/arsenal/ars_river-cba07bdd-1618x1000-50-50.webp",
+          "src": "/media/arsenal/ars-evening-3181bfab-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/arsenal/src/ars_river-cba07bdd.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/arsenal/ars_explotionscheme-4385ff3a-1000x618-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/arsenal/src/ars_explotionscheme-4385ff3a.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/arsenal/ars_museum1-0492e203-1000x382-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/arsenal/src/ars_museum1-0492e203.webp"
+          "original": "/media/arsenal/src/ars-evening-3181bfab.webp"
         }
       ]
     },
@@ -434,30 +416,53 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/arsenal/ars_plan1-c1ac713f-1618x1000-50-50.webp",
+          "src": "/media/arsenal/ars-axo-0a5730bb-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars-axo-0a5730bb.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars-masterplan-ecca585f-1000x618-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/arsenal/src/ars-masterplan-ecca585f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/arsenal/ars_plan1-c1ac713f-1000x382-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/arsenal/src/ars_plan1-c1ac713f.webp"
-        },
+        }
+      ]
+    },
+    {
+      "layout": "main-portrait",
+      "slots": [
         {
           "kind": "image",
-          "src": "/media/arsenal/ars_academy-521623a2-1000x618-50-50.webp",
+          "src": "/media/arsenal/ars-square-2db7c410-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/arsenal/src/ars_academy-521623a2.webp"
+          "original": "/media/arsenal/src/ars-square-2db7c410.webp"
         },
         {
           "kind": "image",
-          "src": "/media/arsenal/ars_flovershop-07f07688-1000x382-50-50.webp",
+          "src": "/media/arsenal/ars-fountain-273c92f5-618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/arsenal/src/ars_flovershop-07f07688.webp"
+          "original": "/media/arsenal/src/ars-fountain-273c92f5.webp"
         }
       ]
     },
@@ -475,12 +480,12 @@
         },
         {
           "kind": "image",
-          "src": "/media/arsenal/ars_newconstr-0dd3e1e0-1618x1000-50-50.webp",
+          "src": "/media/arsenal/ars_flovershop-07f07688-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/arsenal/src/ars_newconstr-0dd3e1e0.webp"
+          "original": "/media/arsenal/src/ars_flovershop-07f07688.webp"
         }
       ]
     }
