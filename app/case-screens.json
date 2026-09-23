@@ -215,21 +215,21 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/spectres/pack-front-aa1d8166-1618x1000-50-50.webp",
+          "src": "/media/spectres/ghosts-mockup-small-7cd78f70-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/ghosts-mockup-small-7cd78f70.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/pack-front-aa1d8166-1000x618-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/spectres/src/pack-front-aa1d8166.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/spectres/img_7122-47c2316a-1000x618-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/spectres/src/img_7122-47c2316a.webp"
         },
         {
           "kind": "image",
@@ -243,34 +243,20 @@
       ]
     },
     {
-      "layout": "main-portrait",
+      "layout": "main-2",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/spectres/ghosts-mockup-small-7cd78f70-1618x1000-50-50.webp",
+          "src": "/media/spectres/img_7122-47c2316a-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/spectres/src/ghosts-mockup-small-7cd78f70.webp"
+          "original": "/media/spectres/src/img_7122-47c2316a.webp"
         },
         {
           "kind": "image",
-          "src": "/media/spectres/img_3942-2fca5008-618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/spectres/src/img_3942-2fca5008.webp"
-        }
-      ]
-    },
-    {
-      "layout": "pair",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/spectres/img_7109-85ce73a9-1618x1000-50-50.webp",
+          "src": "/media/spectres/img_7109-85ce73a9-1000x618-50-50.webp",
           "focus": [
             50,
             50
@@ -279,7 +265,7 @@
         },
         {
           "kind": "image",
-          "src": "/media/spectres/img_7126-ef711c33-1618x1000-50-50.webp",
+          "src": "/media/spectres/img_7126-ef711c33-1000x382-50-50.webp",
           "focus": [
             50,
             50
