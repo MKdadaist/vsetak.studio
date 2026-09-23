@@ -62,6 +62,8 @@ export type CaseItem = {
   cover: CoverVariant;
   media?: MediaItem[];
   link?: { href: string; label: string };
+  // Соседний кейс на этом же сайте — открывается в той же панели.
+  related?: { slug: string; label: string };
   sections: CaseSection[];
   blocks?: CaseBlock[];
   placeholder?: boolean;
@@ -329,6 +331,7 @@ export const directions: Direction[] = [
           href: "https://uberbau-historians.vercel.app",
           label: "historians.uberbau.org",
         },
+        related: { slug: "uberbau-books", label: "Книги Überbau" },
         sections: [
           {
             heading: "Задача",
@@ -441,6 +444,7 @@ export const directions: Direction[] = [
         client: "Издательство Überbau",
         year: "2026",
         role: "Дизайн, вёрстка и препресс изданий",
+        related: { slug: "historians", label: "Лендинг «Историки о будущем»" },
         summary:
           "Две книги издательства: собрание сочинений Михаила Феничева «Лирика» и сборник «Историки о будущем» — от концепции обложки до типографии.",
         cover: "dots",

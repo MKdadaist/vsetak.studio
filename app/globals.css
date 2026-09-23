@@ -629,6 +629,31 @@ html.case-open .case-pane {
   letter-spacing: -0.02em;
 }
 
+/* Ссылка на соседний кейс: тот же размер, что и остальные значения. */
+.case-facts > .is-related {
+  grid-column: span 4;
+}
+
+.case-related {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.case-related:hover {
+  color: var(--accent);
+}
+
 .case-facts a {
   text-decoration-color: var(--accent);
   text-decoration-thickness: 1px;

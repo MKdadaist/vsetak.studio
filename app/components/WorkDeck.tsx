@@ -253,7 +253,7 @@ function CasePaneContent({
         </p>
       </header>
 
-      <CaseBlocks item={item} />
+      <CaseBlocks item={item} onOpen={onNext} />
 
       {following && (
         <footer className="case-next">

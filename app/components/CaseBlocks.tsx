@@ -197,7 +197,17 @@ function widthClass(width: BlockWidth = "full") {
   return `case-block is-${width}`;
 }
 
-function Block({ block, item }: { block: CaseBlock; item: CaseItem }) {
+function Block({
+  block,
+  item,
+  onOpen,
+}: {
+  block: CaseBlock;
+  item: CaseItem;
+  onOpen?: (slug: string) => void;
+}) {
+  const related = item.related;
+
   switch (block.type) {
     case "hero":
       return (
@@ -238,6 +248,20 @@ function Block({ block, item }: { block: CaseBlock; item: CaseItem }) {
                 <a href={item.link.href} target="_blank" rel="noreferrer">
                   {item.link.label}
                 </a>
+              </dd>
+            </div>
+          )}
+          {item.related && (
+            <div className="is-related">
+              <dt>Кейс рядом</dt>
+              <dd>
+                <button
+                  type="button"
+                  className="case-related"
+                  onClick={() => onOpen?.(related.slug)}
+                >
+                  {related.label}
+                </button>
               </dd>
             </div>
           )}
@@ -348,11 +372,22 @@ function Block({ block, item }: { block: CaseBlock; item: CaseItem }) {
   }
 }
 
-export function CaseBlocks({ item }: { item: CaseItem }) {
+export function CaseBlocks({
+  item,
+  onOpen,
+}: {
+  item: CaseItem;
+  onOpen?: (slug: string) => void;
+}) {
   return (
     <>
       {caseBlocks(item).map((block, i) => (
-        <Block block={block} item={item} key={`${block.type}-${i}`} />
+        <Block
+          block={block}
+          item={item}
+          onOpen={onOpen}
+          key={`${block.type}-${i}`}
+        />
       ))}
     </>
   );
