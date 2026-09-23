@@ -597,8 +597,17 @@
   ],
   "znamya": [
     {
-      "layout": "portrait-main",
+      "layout": "main-portrait",
       "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/kz-site-aerial-891e2fe2-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/kz-site-aerial-891e2fe2.webp"
+        },
         {
           "kind": "image",
           "src": "/media/znamya/p-015-066-19389b9d-618x1000-50-50.webp",
@@ -607,15 +616,52 @@
             50
           ],
           "original": "/media/znamya/src/p-015-066-19389b9d.webp"
-        },
+        }
+      ]
+    },
+    {
+      "layout": "single",
+      "slots": [
         {
           "kind": "image",
-          "src": "/media/znamya/p-015-070-a0a8cd95-1618x1000-50-50.webp",
+          "src": "/media/znamya/kz-quarter-12dbd520-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/znamya/src/p-015-070-a0a8cd95.webp"
+          "original": "/media/znamya/src/kz-quarter-12dbd520.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/znamya/kz-arcade-7acb3843-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/kz-arcade-7acb3843.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/kz-square-c48c98a7-1000x618-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/kz-square-c48c98a7.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/znamya/p-015-078-2aca03ca-1000x382-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/znamya/src/p-015-078-2aca03ca.webp"
         }
       ]
     },
@@ -624,12 +670,12 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/znamya/p-015-076-4f7806c4-1618x1000-50-50.webp",
+          "src": "/media/znamya/kz-isochrones-c3858cd3-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/znamya/src/p-015-076-4f7806c4.webp"
+          "original": "/media/znamya/src/kz-isochrones-c3858cd3.webp"
         },
         {
           "kind": "image",
@@ -639,29 +685,6 @@
             50
           ],
           "original": "/media/znamya/src/p-015-074-0cc4dd86.webp"
-        }
-      ]
-    },
-    {
-      "layout": "pair",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/znamya/p-015-068-0ba7fb1f-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/znamya/src/p-015-068-0ba7fb1f.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/znamya/p-015-078-2aca03ca-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/znamya/src/p-015-078-2aca03ca.webp"
         }
       ]
     }
