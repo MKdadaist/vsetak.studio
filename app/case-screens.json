@@ -1233,12 +1233,12 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/uberbau-books/ist-cover-flat-c87a78fb-1618x1000-50-50.webp",
+          "src": "/media/uberbau-books/ist-stack-86354e48-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/uberbau-books/src/ist-cover-flat-c87a78fb.webp"
+          "original": "/media/uberbau-books/src/ist-stack-86354e48.webp"
         },
         {
           "kind": "image",
@@ -1256,12 +1256,12 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/uberbau-books/ist-spread-titul-raw-c2cd540b-1618x1000-50-50.webp",
+          "src": "/media/uberbau-books/ist-cover-flat-c87a78fb-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/uberbau-books/src/ist-spread-titul-raw-c2cd540b.webp"
+          "original": "/media/uberbau-books/src/ist-cover-flat-c87a78fb.webp"
         },
         {
           "kind": "image",
