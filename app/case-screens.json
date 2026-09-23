@@ -215,12 +215,12 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/spectres/img_7131-0c835d4a-1618x1000-50-50.webp",
+          "src": "/media/spectres/pack-front-aa1d8166-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/spectres/src/img_7131-0c835d4a.webp"
+          "original": "/media/spectres/src/pack-front-aa1d8166.webp"
         },
         {
           "kind": "image",
@@ -233,49 +233,17 @@
         },
         {
           "kind": "image",
-          "src": "/media/spectres/img_7126-ef711c33-1000x382-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/spectres/src/img_7126-ef711c33.webp"
-        }
-      ]
-    },
-    {
-      "layout": "main-portraits",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/spectres/timeline-front-6a9844ce-1618x1000-50-50.webp",
+          "src": "/media/spectres/timeline-front-6a9844ce-1000x382-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/spectres/src/timeline-front-6a9844ce.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/spectres/img_3942-2fca5008-618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/spectres/src/img_3942-2fca5008.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/spectres/pack-front-aa1d8166-618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/spectres/src/pack-front-aa1d8166.webp"
         }
       ]
     },
     {
-      "layout": "pair",
+      "layout": "main-portrait",
       "slots": [
         {
           "kind": "image",
@@ -288,12 +256,35 @@
         },
         {
           "kind": "image",
+          "src": "/media/spectres/img_3942-2fca5008-618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_3942-2fca5008.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
           "src": "/media/spectres/img_7109-85ce73a9-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/spectres/src/img_7109-85ce73a9.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/spectres/img_7126-ef711c33-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/spectres/src/img_7126-ef711c33.webp"
         }
       ]
     }
@@ -496,39 +487,16 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/inova/p-013-050-c4d1d682-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/inova/src/p-013-050-c4d1d682.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/inova/ino2-a6a4110d-1000x618-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/inova/src/ino2-a6a4110d.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/inova/ino3-c2d4b015-1000x382-50-50.webp",
+          "src": "/media/inova/ino3-c2d4b015-1618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/inova/src/ino3-c2d4b015.webp"
-        }
-      ]
-    },
-    {
-      "layout": "pair",
-      "slots": [
+        },
         {
           "kind": "image",
-          "src": "/media/inova/ino1-3492c754-1618x1000-50-50.webp",
+          "src": "/media/inova/ino1-3492c754-1000x618-50-50.webp",
           "focus": [
             50,
             50
@@ -537,12 +505,35 @@
         },
         {
           "kind": "image",
-          "src": "/media/inova/ino4-549c456c-1618x1000-50-50.webp",
+          "src": "/media/inova/ino4-549c456c-1000x382-50-50.webp",
           "focus": [
             50,
             50
           ],
           "original": "/media/inova/src/ino4-549c456c.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/inova/ino2-a6a4110d-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/ino2-a6a4110d.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/inova/p-013-050-c4d1d682-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/inova/src/p-013-050-c4d1d682.webp"
         }
       ]
     }
@@ -842,7 +833,7 @@
   ],
   "presentations": [
     {
-      "layout": "slides-3",
+      "layout": "slides-4",
       "slots": [
         {
           "kind": "image",
@@ -855,26 +846,35 @@
         },
         {
           "kind": "image",
-          "src": "/media/presentations/a2-dfcbc1b3-16x9-50-50.webp",
+          "src": "/media/presentations/b2-c97dd166-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/presentations/s7/src/a2-dfcbc1b3.webp"
+          "original": "/media/presentations/s7/src/b2-c97dd166.webp"
         },
         {
           "kind": "image",
-          "src": "/media/presentations/a3-86b9a18b-16x9-50-50.webp",
+          "src": "/media/presentations/b3-143b0509-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/presentations/s7/src/a3-86b9a18b.webp"
+          "original": "/media/presentations/s7/src/b3-143b0509.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/b4-98ee9808-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/s7/src/b4-98ee9808.webp"
         }
       ]
     },
     {
-      "layout": "slides-3",
+      "layout": "slides-4",
       "slots": [
         {
           "kind": "image",
@@ -896,12 +896,21 @@
         },
         {
           "kind": "image",
-          "src": "/media/presentations/a3w-b4363890-16x9-50-50.webp",
+          "src": "/media/presentations/b2-deeb86ef-16x9-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/presentations/az-education/src/a3w-b4363890.webp"
+          "original": "/media/presentations/az-education/src/b2-deeb86ef.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/presentations/c1-8bfd056d-16x9-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/presentations/az-education/src/c1-8bfd056d.webp"
         }
       ]
     },
@@ -934,111 +943,6 @@
             50
           ],
           "original": "/media/presentations/dym/src/p8-cc4f53ef.webp"
-        }
-      ]
-    },
-    {
-      "layout": "slides-4",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/presentations/b1-e92f0896-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/s7/src/b1-e92f0896.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/b2-c97dd166-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/s7/src/b2-c97dd166.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/b3-143b0509-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/s7/src/b3-143b0509.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/b4-98ee9808-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/s7/src/b4-98ee9808.webp"
-        }
-      ]
-    },
-    {
-      "layout": "slides-3",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/presentations/b1-b322f3f1-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/b1-b322f3f1.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/b2-deeb86ef-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/b2-deeb86ef.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/b3-0513c6e3-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/b3-0513c6e3.webp"
-        }
-      ]
-    },
-    {
-      "layout": "slides-3",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/presentations/c1-8bfd056d-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/c1-8bfd056d.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/c2-59bcb18c-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/c2-59bcb18c.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/presentations/c3-47aba0ea-16x9-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/presentations/az-education/src/c3-47aba0ea.webp"
         }
       ]
     }
