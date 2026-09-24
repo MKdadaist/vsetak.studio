@@ -43,7 +43,7 @@ export function MailButton() {
       title="Скопировать адрес"
     >
       <span className="mail-button-label" aria-live="polite">
-        {copied ? "Адрес скопирован" : "Напишите мне"}
+        {copied ? "Адрес скопирован" : "Обсудить задачу"}
       </span>
       <span className="mail-button-mail">{EMAIL}</span>
     </button>
