@@ -246,11 +246,13 @@ a {
   margin-top: 0;
 }
 
+/* Ширина композиции ограничена колонкой: при любом размере окна
+   она не наезжает на текст, высота подтягивается следом. */
 .hero-lockup {
   position: relative;
   grid-column: 1 / span 4;
   align-self: start;
-  height: min(64svh, 640px);
+  width: min(100%, calc(min(64svh, 640px) * 0.72));
   aspect-ratio: 0.72;
   margin-top: 0;
 }
@@ -1258,7 +1260,7 @@ html.case-open .case-pane {
 
   .hero-lockup {
     grid-column: 1 / -1;
-    height: min(46svh, 380px);
+    width: min(100%, calc(min(46svh, 380px) * 0.72));
     margin-top: 8px;
   }
 
