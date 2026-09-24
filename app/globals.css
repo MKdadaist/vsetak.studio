@@ -251,6 +251,51 @@ a {
   font-weight: 300;
 }
 
+/* Контурная кнопка под описанием: клик кладёт адрес в буфер. */
+.mail-button {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: clamp(26px, 3vw, 44px);
+  padding: 13px 20px;
+  border: 1px solid var(--line);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: clamp(16px, 1.15vw, 19px);
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.mail-button:hover,
+.mail-button:focus-visible {
+  border-color: var(--ink);
+}
+
+.mail-button-mail {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.mail-button.is-copied {
+  border-color: var(--accent);
+}
+
+.mail-button.is-copied .mail-button-label {
+  color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .mail-button {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
 /* Строка про портфолио — тем же кеглем, что текст выше, но тише. */
 .is-soon .soon-note {
   font-size: clamp(19px, 1.55vw, 25px);

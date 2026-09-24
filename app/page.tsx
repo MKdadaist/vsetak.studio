@@ -1,4 +1,5 @@
 import { HeroLockup } from "./components/HeroLockup";
+import { MailButton } from "./components/MailButton";
 
 const introLines = ["Привет,", "я Марк Калинин"];
 const intro = introLines.join(" ");
@@ -63,6 +64,8 @@ export default function Home() {
               "Работаю с данными, автоматизацией и искусственным интеллектом. Собираю под конкретные задачи бизнеса цельные системы — от идеи и визуального языка до работающего продукта"
             }
           </p>
+
+          <MailButton />
         </div>
       </section>
 
