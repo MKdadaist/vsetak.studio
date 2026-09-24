@@ -217,19 +217,55 @@ a {
 }
 
 /* Лид начинается с 5-й колонки — там же, где ниже начинается список направлений. */
-/* Портрет на заглушке — слева от описания, верхние края совпадают. */
-.hero-portrait {
-  grid-column: 1 / span 4;
+/* Заглушка: буквы и фигура — отдельные слои, между ними лёгкий параллакс. */
+/* На заглушке первый экран собран плотнее: композиция вместо списка кейсов. */
+.is-soon .hero {
+  padding: clamp(48px, 7vw, 110px) 0 clamp(56px, 7vw, 110px);
+}
+
+.hero-lockup {
+  position: relative;
+  grid-column: 1 / span 6;
   align-self: start;
-  width: 100%;
+  height: min(60svh, 600px);
+  margin-top: clamp(24px, 3vw, 44px);
+}
+
+.hero-lockup img {
+  position: absolute;
   height: auto;
-  margin-top: clamp(70px, 10vw, 150px);
-  background: var(--cover-bg);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+
+/* Размер композиции задаёт высота: буквы во всю высоту, фигура поверх них. */
+.hero-lockup .hero-lockup-type {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  transform: translate3d(
+    calc(var(--px, 0) * -10px),
+    calc(var(--py, 0) * -8px + var(--sy, 0) * -16px),
+    0
+  );
+}
+
+.hero-lockup .hero-lockup-figure {
+  left: 40%;
+  bottom: -2%;
+  height: 82%;
+  width: auto;
+  transform: translate3d(
+    calc(var(--px, 0) * 16px),
+    calc(var(--py, 0) * 12px + var(--sy, 0) * 24px),
+    0
+  );
 }
 
 .hero-copy {
-  grid-column: 5 / span 5;
-  margin-top: clamp(70px, 10vw, 150px);
+  grid-column: 8 / span 5;
+  margin-top: clamp(28px, 3.5vw, 56px);
   font-size: clamp(19px, 1.55vw, 25px);
   line-height: 1.38;
   letter-spacing: -0.02em;
@@ -1188,9 +1224,10 @@ html.case-open .case-pane {
     margin-left: 0;
   }
 
-  .hero-portrait {
+  .hero-lockup {
     grid-column: 1 / -1;
-    margin-top: 32px;
+    height: min(52svh, 420px);
+    margin-top: 24px;
   }
 
   .hero-copy {
