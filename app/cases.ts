@@ -724,6 +724,13 @@ export function findCase(slug: string): CaseItem | undefined {
   return allCases.find((c) => c.slug === slug);
 }
 
+export function prevCase(slug: string): CaseItem | undefined {
+  if (allCases.length < 2) return undefined;
+  const index = allCases.findIndex((c) => c.slug === slug);
+  if (index === -1) return undefined;
+  return allCases[(index - 1 + allCases.length) % allCases.length];
+}
+
 export function nextCase(slug: string): CaseItem | undefined {
   if (allCases.length < 2) return undefined;
   const index = allCases.findIndex((c) => c.slug === slug);

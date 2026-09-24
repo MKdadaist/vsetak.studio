@@ -85,19 +85,20 @@ function SwipeGallery({ screens }: { screens: Screen[] }) {
     setIndex(Math.round(el.scrollLeft / el.clientWidth));
   };
 
-  // Высота ленты — по текущему экрану, чтобы под низкими экранами не было пустоты.
+  // Высота ленты — по самому высокому экрану: при свайпе лента не должна прыгать.
   useEffect(() => {
     const el = strip.current;
-    const page = el?.children[index] as HTMLElement | undefined;
-    if (!el || !page) return;
+    if (!el) return;
+    const pages = Array.from(el.children) as HTMLElement[];
     const fit = () => {
-      el.style.height = `${page.offsetHeight}px`;
+      const tallest = pages.reduce((max, page) => Math.max(max, page.offsetHeight), 0);
+      if (tallest) el.style.height = `${tallest}px`;
     };
     fit();
     const observer = new ResizeObserver(fit);
-    observer.observe(page);
+    pages.forEach((page) => observer.observe(page));
     return () => observer.disconnect();
-  }, [index]);
+  }, [screens.length]);
 
   return (
     <figure className="case-gallery is-swipe">
@@ -116,6 +117,15 @@ function SwipeGallery({ screens }: { screens: Screen[] }) {
         </div>
       )}
     </figure>
+  );
+}
+
+// Высота листалки одна на весь кейс — её задаёт самый широкий экран.
+// Иначе при смене схемы страница прыгала бы.
+function caseRatio(screens: Screen[]) {
+  return screens.reduce(
+    (max, screen) => Math.max(max, layoutRatio(screenLayout(screen))),
+    0,
   );
 }
 
@@ -160,6 +170,7 @@ function Gallery({ screens }: { screens: Screen[] }) {
       style={
         {
           "--screen-ratio": layoutRatio(screenLayout(current)),
+          "--case-ratio": caseRatio(screens),
         } as CSSProperties
       }
     >

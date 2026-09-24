@@ -13,6 +13,7 @@ import {
   findCase,
   firstImage,
   nextCase,
+  prevCase,
   type CaseItem,
 } from "../cases";
 import { CaseBlocks } from "./CaseBlocks";
@@ -96,13 +97,26 @@ export function WorkDeck() {
     return () => root.classList.remove("case-open");
   }, [activeSlug]);
 
+  // Клавиатура в открытом кейсе: Esc — назад, ↑ ↓ — соседние кейсы.
+  // Листалка экранов слушает ← → сама.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && activeSlug) closeCase();
+      if (!activeSlug) return;
+      if (event.key === "Escape") {
+        closeCase();
+        return;
+      }
+      if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      const target =
+        event.key === "ArrowDown" ? nextCase(activeSlug) : prevCase(activeSlug);
+      if (!target) return;
+      event.preventDefault();
+      openCase(target.slug);
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activeSlug, closeCase]);
+  }, [activeSlug, closeCase, openCase]);
 
   return (
     <section className="work" id="work" aria-label="Кейсы по направлениям">
