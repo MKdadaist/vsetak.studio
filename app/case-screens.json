@@ -94,13 +94,28 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/triathlon/scr-20260922-qbhh-f99add4f-618x1000-50-50.webp",
+          "src": "/media/triathlon/e-c48ad144-618x1000-50-50.webp",
+          "original": "/media/triathlon/src/e-c48ad144.webp",
           "focus": [
             50,
             50
-          ],
-          "original": "/media/triathlon/src/scr-20260922-qbhh-f99add4f.webp"
+          ]
         },
+        {
+          "kind": "image",
+          "src": "/media/triathlon/_-ced91445-1618x1000-z1.02-55-49.webp",
+          "original": "/media/triathlon/src/_-ced91445.webp",
+          "focus": [
+            55,
+            49
+          ],
+          "zoom": 1.02
+        }
+      ]
+    },
+    {
+      "layout": "main-portrait",
+      "slots": [
         {
           "kind": "image",
           "src": "/media/triathlon/к-4e6c6a6d-1618x1000-50-50.webp",
@@ -109,20 +124,6 @@
             50,
             50
           ]
-        }
-      ]
-    },
-    {
-      "layout": "main-portraits",
-      "slots": [
-        {
-          "kind": "image",
-          "src": "/media/triathlon/вел-98444e29-1618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/triathlon/src/вел-98444e29.webp"
         },
         {
           "kind": "image",
@@ -132,33 +133,24 @@
             50
           ],
           "original": "/media/triathlon/src/scr-20260922-qazs-b216ef11.webp"
-        },
-        {
-          "kind": "image",
-          "src": "/media/triathlon/scr-20260922-qbey-f3717dfc-618x1000-50-50.webp",
-          "focus": [
-            50,
-            50
-          ],
-          "original": "/media/triathlon/src/scr-20260922-qbey-f3717dfc.webp"
         }
       ]
     },
     {
-      "layout": "main-portrait",
+      "layout": "pair",
       "slots": [
         {
           "kind": "image",
-          "src": "/media/triathlon/_-ced91445-1618x1000-50-50.webp",
+          "src": "/media/triathlon/ыавыа-eddf51f2-1618x1000-50-50.webp",
+          "original": "/media/triathlon/src/ыавыа-eddf51f2.webp",
           "focus": [
             50,
             50
-          ],
-          "original": "/media/triathlon/src/_-ced91445.webp"
+          ]
         },
         {
           "kind": "image",
-          "src": "/media/triathlon/scr-20260922-qaux-48d50bcc-618x1000-50-50.webp",
+          "src": "/media/triathlon/scr-20260922-qaux-48d50bcc-1618x1000-50-50.webp",
           "focus": [
             50,
             50
