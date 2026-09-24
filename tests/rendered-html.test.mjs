@@ -1,13 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -32,9 +32,19 @@ test("server-renders the vsetak.studio landing page", async () => {
   assert.match(html, /<title>Всё так — контент, дизайн, концепции<\/title>/i);
   assert.match(html, /Привет, я(?:\u00a0|&nbsp;)Марк Калинин/);
   assert.doesNotMatch(html, /Марк Калинин\./);
-  assert.match(html, /Презентации/);
+  assert.match(html, /Кейсы откроются чуть позже/);
+  assert.doesNotMatch(html, /Что делаем/);
   assert.match(html, /моя моностудия контента/);
   assert.doesNotMatch(html, /Создаём|Проектируем|Работаем|Собираем/);
   assert.match(html, /mailto:hello@vsetak\.studio/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Starter Project/i);
+});
+
+test("keeps the portfolio on /work", async () => {
+  const response = await render("/work");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Что делаем/);
+  assert.match(html, /Презентации/);
 });

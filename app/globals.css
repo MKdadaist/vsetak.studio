@@ -241,6 +241,41 @@ a {
   border-top: 1px solid var(--line);
 }
 
+/* Заглушка: вместо списка направлений — строка про портфолио. */
+.soon {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 20px;
+  padding: 18px 0 120px;
+  border-top: 1px solid var(--line);
+}
+
+.soon .section-label {
+  grid-column: 1 / span 3;
+  padding-top: 7px;
+}
+
+.soon-note {
+  grid-column: 5 / span 6;
+  margin: 0;
+  font-size: clamp(21px, 2.15vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+@media (max-width: 760px) {
+  .soon {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    padding-bottom: 64px;
+  }
+
+  .soon .section-label,
+  .soon-note {
+    grid-column: 1 / -1;
+  }
+}
+
 .section-label {
   grid-column: 1 / span 3;
   padding-top: 7px;

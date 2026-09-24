@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
+
+import { WorkDeck } from "../components/WorkDeck";
+
+// Портфолио открыто по прямой ссылке, но до запуска не индексируется.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
+
 const introLines = ["Привет,", "я Марк Калинин"];
 const intro = introLines.join(" ");
 
-export default function Home() {
+export default function WorkPage() {
   return (
-    <main className="site-shell is-soon">
+    <main className="site-shell">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Всё так — в начало">
           Всё так<span className="wordmark-dot">.</span>
@@ -66,16 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="soon" aria-labelledby="soon-heading">
-        <p className="section-label" id="soon-heading">
-          Портфолио
-        </p>
-        <p className="soon-note">
-          {
-            "Кейсы откроются чуть позже. Пока\u00a0— напишите, покажу работы и\u00a0обсудим задачу."
-          }
-        </p>
-      </section>
+      <WorkDeck />
 
       <footer className="site-footer">
         <p className="footer-statement">
