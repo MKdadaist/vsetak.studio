@@ -246,6 +246,20 @@ a {
   margin-top: 0;
 }
 
+/* Перечисление работ набрано светлым начертанием — Spectral Light. */
+.is-soon .hero-copy p:not(.lead) {
+  font-weight: 300;
+}
+
+/* Строка про портфолио — тем же кеглем, что текст выше, но тише. */
+.is-soon .soon-note {
+  font-size: clamp(19px, 1.55vw, 25px);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+}
+
 /* Ширина композиции ограничена колонкой: при любом размере окна
    она не наезжает на текст, высота подтягивается следом. */
 .hero-lockup {
