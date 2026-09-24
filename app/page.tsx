@@ -7,51 +7,47 @@ export default function Home() {
   return (
     <main className="site-shell is-soon">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Всё так — в начало">
-          Всё так<span className="wordmark-dot">.</span>
-        </a>
-
         <p className="eyebrow">Контент, дизайн, концепции</p>
       </header>
 
       <section className="hero" id="top" aria-labelledby="intro-heading">
-        <h1 className="intro" id="intro-heading" aria-label={intro}>
-          <span className="sr-only">{intro}</span>
-          <span className="typewriter" aria-hidden="true">
-            {introLines.map((line, lineIndex) => {
-              const characterOffset = introLines
-                .slice(0, lineIndex)
-                .reduce((total, current) => total + current.length + 1, 0);
-
-              return (
-                <span className="typewriter-line" key={line}>
-                  {Array.from(line).map((character, characterIndex) => {
-                    const index = characterOffset + characterIndex;
-
-                    return (
-                      <span
-                        className="typewriter-character"
-                        style={
-                          { "--character-index": index } as React.CSSProperties
-                        }
-                        key={`${character}-${index}`}
-                      >
-                        {character === " " ? " " : character}
-                      </span>
-                    );
-                  })}
-                  {lineIndex === introLines.length - 1 && (
-                    <span className="typewriter-caret" />
-                  )}
-                </span>
-              );
-            })}
-          </span>
-        </h1>
-
         <HeroLockup />
 
         <div className="hero-copy">
+          <h1 className="intro" id="intro-heading" aria-label={intro}>
+            <span className="sr-only">{intro}</span>
+            <span className="typewriter" aria-hidden="true">
+              {introLines.map((line, lineIndex) => {
+                const characterOffset = introLines
+                  .slice(0, lineIndex)
+                  .reduce((total, current) => total + current.length + 1, 0);
+
+                return (
+                  <span className="typewriter-line" key={line}>
+                    {Array.from(line).map((character, characterIndex) => {
+                      const index = characterOffset + characterIndex;
+
+                      return (
+                        <span
+                          className="typewriter-character"
+                          style={
+                            { "--character-index": index } as React.CSSProperties
+                          }
+                          key={`${character}-${index}`}
+                        >
+                          {character === " " ? " " : character}
+                        </span>
+                      );
+                    })}
+                    {lineIndex === introLines.length - 1 && (
+                      <span className="typewriter-caret" />
+                    )}
+                  </span>
+                );
+              })}
+            </span>
+          </h1>
+
           <p className="lead">
             {
               "«Всё так» — моя моностудия контента, дизайна и цифровых продуктов."

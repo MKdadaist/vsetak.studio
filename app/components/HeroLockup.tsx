@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-// Композиция заглушки: буквы и фигура — отдельные слои,
-// они чуть расходятся от курсора и при прокрутке.
+// Композиция заглушки: буквы и фигура — отдельные слои.
+// При прокрутке надпись уходит вверх быстрее фигуры, вбок ничего не едет.
 export function HeroLockup() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -13,15 +13,13 @@ export function HeroLockup() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
-    let pointerX = 0;
-    let pointerY = 0;
-    let scroll = 0;
 
     const paint = () => {
       frame = 0;
-      node.style.setProperty("--px", pointerX.toFixed(3));
-      node.style.setProperty("--py", pointerY.toFixed(3));
-      node.style.setProperty("--sy", scroll.toFixed(3));
+      const box = node.getBoundingClientRect();
+      const middle = box.top + box.height / 2;
+      const shift = (window.innerHeight / 2 - middle) / window.innerHeight;
+      node.style.setProperty("--sy", shift.toFixed(3));
     };
 
     const schedule = () => {
@@ -29,35 +27,19 @@ export function HeroLockup() {
       frame = window.requestAnimationFrame(paint);
     };
 
-    const onPointerMove = (event: PointerEvent) => {
-      const box = node.getBoundingClientRect();
-      pointerX = (event.clientX - (box.left + box.width / 2)) / box.width;
-      pointerY = (event.clientY - (box.top + box.height / 2)) / box.height;
-      schedule();
-    };
-
-    const onScroll = () => {
-      const box = node.getBoundingClientRect();
-      const middle = box.top + box.height / 2;
-      scroll = (window.innerHeight / 2 - middle) / window.innerHeight;
-      schedule();
-    };
-
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    onScroll();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    schedule();
 
     return () => {
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 
   return (
-    <div className="hero-lockup" ref={ref} aria-hidden="false">
+    <div className="hero-lockup" ref={ref}>
       <img
         className="hero-lockup-type"
         src="/hero/vse-tak.webp"
@@ -70,7 +52,7 @@ export function HeroLockup() {
         src="/hero/mark.webp"
         alt="Марк Калинин"
         width={1200}
-        height={1857}
+        height={1762}
       />
     </div>
   );

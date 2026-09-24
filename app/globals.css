@@ -218,17 +218,41 @@ a {
 
 /* Лид начинается с 5-й колонки — там же, где ниже начинается список направлений. */
 /* Заглушка: буквы и фигура — отдельные слои, между ними лёгкий параллакс. */
-/* На заглушке первый экран собран плотнее: композиция вместо списка кейсов. */
+/* Заглушка: композиция слева, текст справа, первый экран собран плотно. */
 .is-soon .hero {
-  padding: clamp(48px, 7vw, 110px) 0 clamp(56px, 7vw, 110px);
+  padding: clamp(28px, 3.5vw, 56px) 0 clamp(40px, 5vw, 72px);
+}
+
+.is-soon .site-header .eyebrow {
+  grid-column: 1 / span 6;
+}
+
+/* «Привет, я Марк Калинин» работает лидом к тексту, а не заголовком. */
+.is-soon .intro {
+  min-height: 0;
+  margin: 0 0 clamp(18px, 1.8vw, 30px);
+  font-size: clamp(25px, 2.5vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.is-soon .typewriter-caret {
+  width: 1px;
+  height: 0.86em;
+}
+
+.is-soon .hero-copy {
+  grid-column: 5 / span 6;
+  margin-top: 0;
 }
 
 .hero-lockup {
   position: relative;
-  grid-column: 1 / span 6;
+  grid-column: 1 / span 4;
   align-self: start;
-  height: min(60svh, 600px);
-  margin-top: clamp(24px, 3vw, 44px);
+  height: min(64svh, 640px);
+  aspect-ratio: 0.72;
+  margin-top: 0;
 }
 
 .hero-lockup img {
@@ -238,29 +262,22 @@ a {
   will-change: transform;
 }
 
-/* Размер композиции задаёт высота: буквы во всю высоту, фигура поверх них. */
+/* Буквы стоят выше дальней ножки стула, фигура перекрывает их справа.
+   При прокрутке надпись уходит вверх быстрее фигуры — перспектива. */
 .hero-lockup .hero-lockup-type {
   left: 0;
   top: 0;
-  height: 100%;
+  height: 72%;
   width: auto;
-  transform: translate3d(
-    calc(var(--px, 0) * -10px),
-    calc(var(--py, 0) * -8px + var(--sy, 0) * -16px),
-    0
-  );
+  transform: translate3d(0, calc(var(--sy, 0) * -70px), 0);
 }
 
 .hero-lockup .hero-lockup-figure {
-  left: 40%;
-  bottom: -2%;
-  height: 82%;
+  right: 0;
+  bottom: 0;
+  height: 78%;
   width: auto;
-  transform: translate3d(
-    calc(var(--px, 0) * 16px),
-    calc(var(--py, 0) * 12px + var(--sy, 0) * 24px),
-    0
-  );
+  transform: translate3d(0, calc(var(--sy, 0) * -18px), 0);
 }
 
 .hero-copy {
@@ -1048,6 +1065,15 @@ html.case-open .case-pane {
   color: var(--accent);
 }
 
+.is-soon .soon {
+  padding: 16px 0 44px;
+}
+
+.is-soon .site-footer {
+  min-height: 0;
+  padding-top: 44px;
+}
+
 .site-footer {
   align-items: end;
   min-height: 55vh;
@@ -1205,6 +1231,12 @@ html.case-open .case-pane {
     white-space: nowrap;
   }
 
+  /* На заглушке вордмарка нет — подпись идёт слева. */
+  .is-soon .eyebrow {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
   .hero {
     padding: 44px 0 56px;
   }
@@ -1226,8 +1258,17 @@ html.case-open .case-pane {
 
   .hero-lockup {
     grid-column: 1 / -1;
-    height: min(52svh, 420px);
-    margin-top: 24px;
+    height: min(46svh, 380px);
+    margin-top: 8px;
+  }
+
+  .is-soon .hero-copy {
+    grid-column: 1 / -1;
+    margin-top: 28px;
+  }
+
+  .is-soon .intro {
+    font-size: 24px;
   }
 
   .hero-copy {
