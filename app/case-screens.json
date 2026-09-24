@@ -94,21 +94,21 @@
       "slots": [
         {
           "kind": "image",
-          "src": "/media/triathlon/scr-20260922-qazs-b216ef11-618x1000-50-50.webp",
+          "src": "/media/triathlon/scr-20260922-qbhh-f99add4f-618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/triathlon/src/scr-20260922-qazs-b216ef11.webp"
+          "original": "/media/triathlon/src/scr-20260922-qbhh-f99add4f.webp"
         },
         {
           "kind": "image",
-          "src": "/media/triathlon/питер-a8898d6f-1618x1000-50-50.webp",
+          "src": "/media/triathlon/к-4e6c6a6d-1618x1000-50-50.webp",
+          "original": "/media/triathlon/src/к-4e6c6a6d.webp",
           "focus": [
             50,
             50
-          ],
-          "original": "/media/triathlon/src/питер-a8898d6f.webp"
+          ]
         }
       ]
     },
@@ -126,12 +126,12 @@
         },
         {
           "kind": "image",
-          "src": "/media/triathlon/scr-20260922-qbhh-f99add4f-618x1000-50-50.webp",
+          "src": "/media/triathlon/scr-20260922-qazs-b216ef11-618x1000-50-50.webp",
           "focus": [
             50,
             50
           ],
-          "original": "/media/triathlon/src/scr-20260922-qbhh-f99add4f.webp"
+          "original": "/media/triathlon/src/scr-20260922-qazs-b216ef11.webp"
         },
         {
           "kind": "image",
@@ -1130,6 +1130,141 @@
             50
           ],
           "original": "/media/uberbau-books/src/ist-spread-raw-b8a58d03.webp"
+        }
+      ]
+    }
+  ],
+  "health-museum": [
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-35-30ddefdd-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-35-30ddefdd.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-3-de59e62e-1000x618-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-3-de59e62e.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-52-b15cfdc2-1000x382-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-52-b15cfdc2.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-portrait",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-12-a47cc22f-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-12-a47cc22f.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-26-84335193-618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-26-84335193.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/health-museum/poster-olesya5-75fd0ff8-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/poster-olesya5-75fd0ff8.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/poster-venus-de991664-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/poster-venus-de991664.webp"
+        }
+      ]
+    },
+    {
+      "layout": "main-2",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-27-58bde095-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-27-58bde095.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/rec-3-4470dd45-1000x618-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/rec-3-4470dd45.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/plan-2-86c8e25e-1000x382-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/plan-2-86c8e25e.webp"
+        }
+      ]
+    },
+    {
+      "layout": "pair",
+      "slots": [
+        {
+          "kind": "image",
+          "src": "/media/health-museum/box-2e869dfb-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/box-2e869dfb.webp"
+        },
+        {
+          "kind": "image",
+          "src": "/media/health-museum/i-31-3c88d24b-1618x1000-50-50.webp",
+          "focus": [
+            50,
+            50
+          ],
+          "original": "/media/health-museum/src/i-31-3c88d24b.webp"
         }
       ]
     }
