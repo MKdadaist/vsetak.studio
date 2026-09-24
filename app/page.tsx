@@ -47,6 +47,14 @@ export default function Home() {
           </span>
         </h1>
 
+        <img
+          className="hero-portrait"
+          src="/mark-vse-tak.webp"
+          alt="Марк Калинин"
+          width={1130}
+          height={1400}
+        />
+
         <div className="hero-copy">
           <p className="lead">
             {

@@ -217,6 +217,16 @@ a {
 }
 
 /* Лид начинается с 5-й колонки — там же, где ниже начинается список направлений. */
+/* Портрет на заглушке — слева от описания, верхние края совпадают. */
+.hero-portrait {
+  grid-column: 1 / span 4;
+  align-self: start;
+  width: 100%;
+  height: auto;
+  margin-top: clamp(70px, 10vw, 150px);
+  background: var(--cover-bg);
+}
+
 .hero-copy {
   grid-column: 5 / span 5;
   margin-top: clamp(70px, 10vw, 150px);
@@ -1176,6 +1186,11 @@ html.case-open .case-pane {
 
   .typewriter-line + .typewriter-line {
     margin-left: 0;
+  }
+
+  .hero-portrait {
+    grid-column: 1 / -1;
+    margin-top: 32px;
   }
 
   .hero-copy {
